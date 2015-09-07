@@ -5,333 +5,9 @@
     <description>In order to be old and wise, you must first be young and stupid.</description>
     <link>http://nyl.io/blog/</link>
     <atom:link href="http://nyl.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Sep 2015 13:21:03 -0700</pubDate>
-    <lastBuildDate>Mon, 07 Sep 2015 13:21:03 -0700</lastBuildDate>
+    <pubDate>Mon, 07 Sep 2015 16:33:59 -0700</pubDate>
+    <lastBuildDate>Mon, 07 Sep 2015 16:33:59 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
-    
-      <item>
-        <title>Makers on Mars</title>
-        <description>&lt;h1 id=&quot;makers-on-mars&quot;&gt;Makers on Mars&lt;/h1&gt;
-
-&lt;p&gt;I recently stumbled across this series on SpaceX. It dives deep into what is up with that kooky program and why it’s so important for humans to live and establish civilization on Mars.&lt;/p&gt;
-
-&lt;p&gt;I believe the Maker Toolkit will become crucial for the first human colony on Mars (or any other planet). A colony is a small group of people. Yes, Elon wants to put one million people on Mars. One million is a pretty big number. However, it’s small when you consider you’re aiming to build a whole civilization. In 1775, the American Colonies had more than double that–2.4 million people. And that’s, you know, back in the “simple days.”&lt;/p&gt;
-
-&lt;p&gt;If you think about what it takes to power a civilization today, there’s a lot of support behind everything we use around us. For example, let’s look at this lamp that I’m using on my table. It’s a simple lamp. There’s an on/off switch, and this neck that I can move around to shine light on different things. It has a sturdy base. Not that fancy.&lt;/p&gt;
-
-&lt;p&gt;But there was some factory that molded the plastic which covers the lightbulb, another factory that bent the metal which makes up the step and base, another factory that made the lightbulb, another factory that wired everything together so that electricity ends up at the right place and doesn’t start fires, another factory that made the cable, another factory that… you get the idea. If you put all those factories together just to create one simple desk lamp, you start to shave off resources (people, machines, housing, etc) from your starter colony quite fast.&lt;/p&gt;
-
-&lt;p&gt;So how do you maximize the utility of that 1 million humanity starter pack? How do you eliminate the need for all those factories, and the factories that support the factories?&lt;small&gt;(you see where I’m going right?)&lt;/small&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;makers&quot;&gt;Makers!&lt;/h1&gt;
-
-&lt;p&gt;Makers can take raw(ish) resources, and transform them into a variety of useful things. This eliminates the need for much of those supporting factories. Supply Shuttles from Earth can become much more efficient, carrying raw materials like plastic, fabric, and sheets of wood and metal. This is much easier than if &lt;a class=&quot;tip&quot; data-content=&quot;aka Blue Origin&quot;&gt;Amazon.space&lt;/a&gt; had to organize how many lamps, mugs, tables, etc. it needs to send out to space.&lt;/p&gt;
-
-&lt;tip class=&quot;fa fa-info-circle&quot; data-content=&quot;hello world&quot; /&gt;
-
-&lt;tip class=&quot;fa  fa-question-circle&quot; data-content=&quot;FR4 is made with fiberglass. When milled, little bits of fiberglass can get inside your lungs and if that happens, you're going to have a bad time.&quot; /&gt;
-
-</description>
-        <pubDate>Mon, 07 Sep 2015 10:27:59 -0700</pubDate>
-        <link>http://nyl.io/blog/2015/09/makers-on-mars/</link>
-        <guid isPermaLink="true">http://nyl.io/blog/2015/09/makers-on-mars/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Hello World, Milling PCBs</title>
-        <description>&lt;h5 id=&quot;this-post-is-part-of-the-hello-world-projectshelloworld&quot;&gt;This post is part of the &lt;a href=&quot;/helloworld&quot;&gt;Hello World Projects&lt;/a&gt;.&lt;/h5&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;There are many ways to create custom PCBs (printed circuit boards). I like milling because the CNC mill can etch the traces, drill the through-holes, and cut the board all with one machine. All in a few minutes if your board is small.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/content/images/2015/09/tracetest_an.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;My friendly neighborhood &lt;a href=&quot;http://sodo.ms&quot;&gt;SoDo MakerSpace&lt;/a&gt; has a Shapeoko 2, which I’ve been using. In this tutorial, I’ll show you how mill some PCBs.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;div class=&quot;guide-step&quot;&gt;
-  &lt;div class=&quot;guide-images&quot;&gt;
-    &lt;img src=&quot;http://www.nyl.io/temp.jpg&quot; data-caption=&quot;&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;guide-text&quot;&gt;
-    &lt;h2 class=&quot;guide-title&quot;&gt;Ingredients&lt;/h2&gt;
-    &lt;strong&gt;Software&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;http://fritzing.org/download/&quot;&gt;Fritzing &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://inkscape.org/en/download/&quot;&gt;Inkscape &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://www.makercam.com/&quot;&gt;MakerCAM &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/a&gt; (website)&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;strong&gt;Hardware&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;http://amzn.to/1VFUA9e&quot;&gt;Engraving Bit (20&lt;sup&gt;o&lt;/sup&gt;, 0.2mm) &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://amzn.to/1ip1txr&quot;&gt;Drill Bit (0.9mm) &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://amzn.to/1Uzp8qR&quot;&gt;Square Nose Endmill (1/16 inch) &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.inventables.com/technologies/circuit-board-blanks&quot;&gt;Copper FR1 Boards &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;, NOT FR4!! &lt;tip class=&quot;fa  fa-question-circle&quot; data-content=&quot;FR4 is made with fiberglass. When milled, little bits of fiberglass can get inside your lungs and if that happens, you're going to have a bad time.&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://www.shapeoko.com/&quot;&gt;Shapeoko 2 &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/a&gt; running on GRBL&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;guide-step&quot;&gt;
-  &lt;div class=&quot;guide-images&quot;&gt;
-    &lt;img src=&quot;http://www.nyl.io/temp.jpg&quot; data-caption=&quot;&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;guide-text&quot;&gt;
-    &lt;h2 class=&quot;guide-title&quot;&gt;Step 1: Export to SVG&lt;/h2&gt;
-    In Fritzing:
-    &lt;ul&gt;&lt;li&gt;Export SVG: &lt;click&gt;Export PCB &amp;gt; Etchable SVG&lt;/click&gt;&lt;/li&gt;&lt;/ul&gt;
-    &lt;br /&gt;
-    &lt;div class=&quot;fa-bullet&quot;&gt;&lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;
-      &lt;a href=&quot;&quot;&gt;How to design PCBs with Fritzing &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;.
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;guide-step&quot;&gt;
-  &lt;div class=&quot;guide-images&quot;&gt;
-    &lt;img src=&quot;http://www.nyl.io/temp.jpg&quot; data-caption=&quot;&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;guide-text&quot;&gt;
-    &lt;h2 class=&quot;guide-title&quot;&gt;Step 2: Process SVG with InkScape&lt;/h2&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Open InkScape (&lt;a href=&quot;&quot;&gt;download &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;)&lt;/li&gt;
-      &lt;li&gt;&lt;click&gt;Edit &amp;gt; Select All (Ctrl+A)&lt;/click&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;click&gt;Object &amp;gt; Ungroup (Ctrl+Shift+G)&lt;/click&gt;, repeat until you see &quot;No groups to ungroup&quot; in the bottom&lt;/li&gt;&lt;/ul&gt;
-      
-      &lt;li&gt;[Optional] &lt;click&gt;View &amp;gt; Outline&lt;/click&gt; &lt;tip class=&quot;fa fa-question-circle&quot; data-content=&quot;This is so you can see the difference in the following step&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;click&gt;Path &amp;gt; Stroke to Path&lt;/click&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;click&gt;Path &amp;gt; Union&lt;/click&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;click&gt;File &amp;gt; Save As &amp;gt; *.svg&lt;/click&gt;&lt;/li&gt;
-    
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;guide-step&quot;&gt;
-  &lt;div class=&quot;guide-images&quot;&gt;
-    &lt;img src=&quot;http://www.nyl.io/temp.jpg&quot; data-caption=&quot;&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;guide-text&quot;&gt;
-    &lt;h2 class=&quot;guide-title&quot;&gt;Step 3: Open SVG with MakerCam&lt;/h2&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Go to &lt;a href=&quot;http://makercam.com&quot;&gt;makercam.com &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;Open SVG: &lt;click&gt;File &amp;gt; Open SVG&lt;/click&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;br /&gt;
-    &lt;strong&gt;Some Navigation Tips&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt; To Pan: &lt;click&gt;Toolbar &amp;gt; Hand Icon&lt;/click&gt;&lt;/li&gt;
-      &lt;li&gt; To Zoom: &lt;click&gt;Toolbar &amp;gt; Plus/Minus Icon&lt;/click&gt; or Scroll Up/Down&lt;/li&gt;
-      &lt;li&gt; To Select: &lt;click&gt;Toolbar &amp;gt; Arrow Icon&lt;/click&gt;, then click or click+drag to select&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;guide-step&quot;&gt;
-  &lt;div class=&quot;guide-images&quot;&gt;
-    &lt;img src=&quot;http://www.nyl.io/temp.jpg&quot; data-caption=&quot;&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;guide-text&quot;&gt;
-    &lt;h2 class=&quot;guide-title&quot;&gt;Step 3: Make Copper Trace&lt;/h2&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Select copper trace outlines&lt;/li&gt;
-      &lt;li&gt;Create Profile &lt;click&gt;CAM &amp;gt; Profile&lt;/click&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;table class=&quot;small&quot;&gt;
-      &lt;tr&gt;&lt;th&gt;Profile for Traces&lt;/th&gt;&lt;th&gt;&amp;lt;12 mil&lt;/th&gt;&lt;th&gt;&amp;gt;12 mil&lt;/th&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;tool diameter (in)&lt;/td&gt;&lt;td&gt;0.01&lt;/td&gt;&lt;td&gt;0.008&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;target depth (in)&lt;/td&gt;&lt;td&gt;0.008&lt;/td&gt;&lt;td&gt;0.006&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;inside/outside&lt;/td&gt;&amp;lt;td colspan=2&amp;gt;Outside&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;safety height (in)&lt;/td&gt;&amp;lt;td colspan=2&amp;gt;0.5
-        &lt;tip class=&quot;fa fa-question-circle&quot; data-content=&quot;You should tweak this number to match your set up. If you have jigs or other items that exceed 0.5 inches, for example, increase this number!&quot; /&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;stock surface (in)&lt;/td&gt;&amp;lt;td colspan=2&amp;gt;0&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;step down (in)&lt;/td&gt;&lt;td&gt;0.004&lt;/td&gt;&lt;td&gt;0.003&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;feedrate (in/min)&lt;/td&gt;&amp;lt;td colspan=2&amp;gt;6&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;plunge rate (in/min)&lt;/td&gt;&amp;lt;td colspan=2&amp;gt;10&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;direction&lt;/td&gt;&amp;lt;td colspan=2&amp;gt;counter clockwise&lt;/tr&gt;
-    &lt;/table&gt;
-    &lt;div class=&quot;fa-bullet&quot;&gt;&lt;i class=&quot;fa fa-gear&quot;&gt;&lt;/i&gt; Tool: Engraving Bit (20 deg, 0.2mm)&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;guide-step&quot;&gt;
-  &lt;div class=&quot;guide-images&quot;&gt;
-    &lt;img src=&quot;http://www.nyl.io/temp.jpg&quot; data-caption=&quot;&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;guide-text&quot;&gt;
-    &lt;h2 class=&quot;guide-title&quot;&gt;Step 4: Make Through Hole&lt;/h2&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Select through hole outlines&lt;/li&gt;
-      &lt;li&gt;Create Profile: &lt;click&gt;CAM &amp;gt; Drill Operation&lt;/click&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;table class=&quot;small&quot;&gt;
-      &lt;thead&gt;&amp;lt;th colspan=99&amp;gt;Through Hole Profile:&lt;/thead&gt;
-      &lt;tr&gt;&lt;td&gt;tool diameter (in)&lt;/td&gt;&lt;td&gt;0.035433&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;target depth (in)&lt;/td&gt;&lt;td&gt;0.075&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;drill location&lt;/td&gt;&lt;td&gt;path center&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;hole spacing (in)&lt;/td&gt;&lt;td&gt;0.5&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;safety height (in)&lt;/td&gt;&lt;td&gt;0.5&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;stock surface (in)&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;peck distance (in)&lt;/td&gt;&lt;td&gt;0.05&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;plunge rate (in/min)&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;/tr&gt;
-    &lt;/table&gt;
-    &lt;div class=&quot;fa-bullet&quot;&gt;&lt;i class=&quot;fa fa-gear&quot;&gt;&lt;/i&gt; Tool: Drill Bit (0.9mm)&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;guide-step&quot;&gt;
-  &lt;div class=&quot;guide-images&quot;&gt;
-    &lt;img src=&quot;http://www.nyl.io/temp.jpg&quot; data-caption=&quot;&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;guide-text&quot;&gt;
-    &lt;h2 class=&quot;guide-title&quot;&gt;Step 5: Make Board Outline&lt;/h2&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Select through hole outlines&lt;/li&gt;
-      &lt;li&gt;Create Profile: &lt;click&gt;CAM &amp;gt; Profile Operation&lt;/click&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;table class=&quot;small&quot;&gt;
-      &lt;thead&gt;&amp;lt;th colspan=99&amp;gt;Board Outline Cut Profile:&lt;/thead&gt;
-      &lt;tr&gt;&lt;td&gt;tool diameter (in)&lt;/td&gt;&lt;td&gt;0.0625&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;target depth (in)&lt;/td&gt;&lt;td&gt;-0.075&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;inside/outside&lt;/td&gt;&lt;td&gt;Outside&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;safety height (in)&lt;/td&gt;&lt;td&gt;0.5&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;stock surface (in)&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;step down (in)&lt;/td&gt;&lt;td&gt;0.015&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;feed rate (in/minute)&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;plunge rate (in/minute)&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;direction&lt;/td&gt;&lt;td&gt;Counter Clockwise&lt;/td&gt;&lt;/tr&gt;
-    &lt;/table&gt;
-    &lt;div class=&quot;fa-bullet&quot;&gt;&lt;i class=&quot;fa fa-gear&quot;&gt;&lt;/i&gt; Tool: Square Endmill (1/16 in)&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;guide-step&quot;&gt;
-  &lt;div class=&quot;guide-images&quot;&gt;
-    &lt;img src=&quot;http://www.nyl.io/temp.jpg&quot; data-caption=&quot;&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;guide-text&quot;&gt;
-    &lt;h2 class=&quot;guide-title&quot;&gt;Step 6: Calculate GCode&lt;/h2&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;click&gt;Cam &amp;gt; Calculate All&lt;/click&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;guide-step&quot;&gt;
-  &lt;div class=&quot;guide-images&quot;&gt;
-    &lt;img src=&quot;http://www.nyl.io/temp.jpg&quot; data-caption=&quot;&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;guide-text&quot;&gt;
-    &lt;h2 class=&quot;guide-title&quot;&gt;Step 7: Add Tabs&lt;/h2&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Select Board Outline Path&lt;/li&gt;
-      &lt;li&gt;Add Tabs: &lt;click&gt;CAM &amp;gt; Add Tab to Selected&lt;/click&gt;
-    
-    &lt;table class=&quot;small&quot;&gt;
-      &lt;tr&gt;&amp;lt;th colspan=99&amp;gt;Tab Settings&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;tab spacing (in)&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;   
-      &lt;tr&gt;&lt;td&gt;tab width (in)&lt;/td&gt;&lt;td&gt;0.05&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;tab height (in)&lt;/td&gt;&lt;td&gt;0.25&lt;/td&gt;&lt;/tr&gt;
-    &lt;/table&gt;
-  
-
-
-&lt;div class=&quot;guide-step&quot;&gt;
-  &lt;div class=&quot;guide-images&quot;&gt;
-    &lt;img src=&quot;http://www.nyl.io/temp.jpg&quot; data-caption=&quot;&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;guide-text&quot;&gt;
-    &lt;h2 class=&quot;guide-title&quot;&gt;Step 8: Export GCode&lt;/h2&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;click&gt;Cam &amp;gt; Export GCode&lt;/click&gt;&lt;/li&gt;
-      &lt;li&gt;Select one path at a time&lt;/li&gt;
-      &lt;li&gt;Click &quot;Export Selected Toolpath&quot;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;br /&gt;
-    &lt;table class=&quot;small&quot;&gt;
-      &lt;tr&gt;&amp;lt;th colspan=99&amp;gt;Tools to use during CNC&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;traces&lt;/td&gt;&lt;td&gt;engraving bit (20 deg, 0.2mm)&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;holes&lt;/td&gt;&lt;td&gt;drill bit (0.9 mm)&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;board&lt;/td&gt;&lt;td&gt;square endmill (1/16 in)&lt;/td&gt;&lt;/tr&gt;
-    &lt;/table&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;guide-step&quot;&gt;
-  &lt;div class=&quot;guide-images&quot;&gt;
-    &lt;img src=&quot;http://www.nyl.io/temp.jpg&quot; data-caption=&quot;&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;guide-text&quot;&gt;
-    &lt;h3 class=&quot;guide-title&quot;&gt;Check Your Code&lt;/h3&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Go to: &lt;a href=&quot;http://nraynaud.github.io/webgcode/&quot;&gt;G-Code Q'n'dirty Simulator &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;Copy/Paste the GCode (.nc) text data into left box &lt;tip class=&quot;fa fa-apple&quot; data-content=&quot;For Mac users, just drag in the GCode (.nc) file.&quot; /&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Click Simulate Button&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;guide-step&quot;&gt;
-  &lt;div class=&quot;guide-images&quot;&gt;
-    &lt;img src=&quot;http://www.nyl.io/temp.jpg&quot; data-caption=&quot;&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;guide-text&quot;&gt;
-    &lt;h2 class=&quot;guide-title&quot;&gt;Step 9: Mill It!&lt;/h2&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Clamp board in&lt;/li&gt;
-      &lt;li&gt;Turn Shapeoko On&lt;/li&gt;
-      &lt;li&gt;Unlock &lt;a href=&quot;http://zapmaker.org/projects/grbl-controller-3-0/&quot;&gt;GRBL Controller &lt;i class=&quot;fa fa-external-link&quot;&gt;&lt;/i&gt;&lt;/a&gt; &lt;tip class=&quot;fa fa-info-circle&quot; data-content=&quot;You can use other GCode senders, of course, but the GRBL is the one I'm most familiar with.&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;Click &lt;c&gt;Choose File&lt;/c&gt; button&lt;/li&gt;
-      &lt;li&gt;Bring Engraving Bit to touch the surface of the board&lt;/li&gt;
-      &lt;li&gt;Click the &quot;Start&quot; button&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;br /&gt;
-    &lt;div class=&quot;fa-bullet&quot;&gt;&lt;i class=&quot;fa fa-repeat&quot;&gt;&lt;/i&gt; Repeat for through holes (w/ drill bit), then the board cut (w/ endmill)&lt;/div&gt;
-    
-  &lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;div class=&quot;guide-step&quot;&gt;
-  &lt;div class=&quot;guide-images&quot;&gt;
-    &lt;img src=&quot;http://www.nyl.io/temp.jpg&quot; data-caption=&quot;&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;guide-text&quot;&gt;
-    &lt;h2 class=&quot;guide-title&quot;&gt;Step 10: Snap the Tabs&lt;/h2&gt;
-    Snap and you're set!
-  &lt;/div&gt;
-&lt;/div&gt;
-
-#### Related Tutorials:
-- [Hello World, Custom PCBs with Fritzing](http://blog.nyl.io/hello-world-custom-pcb-fritzing/)
-
-Got it? Got it. Now go make things. 
-
-&lt;!--
-&lt;div class=&quot;guide-step&quot;&gt;
-  &lt;div class=&quot;guide-images&quot;&gt;
-    &lt;img src=&quot;http://www.nyl.io/temp.jpg&quot; data-caption=&quot;&quot; /&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;guide-text&quot;&gt;
-    &lt;h2 class=&quot;guide-title&quot;&gt;&lt;/h2&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
---&gt;
-&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Mon, 07 Sep 2015 10:27:59 -0700</pubDate>
-        <link>http://nyl.io/blog/2015/09/hello-world-milling-pcbs/</link>
-        <guid isPermaLink="true">http://nyl.io/blog/2015/09/hello-world-milling-pcbs/</guid>
-        
-        
-      </item>
     
       <item>
         <title>Hello World Projects</title>
@@ -1025,6 +701,276 @@ Ok. Now go make stuff.
         <pubDate>Sun, 02 Aug 2015 19:22:57 -0700</pubDate>
         <link>http://nyl.io/blog/2015/08/esp8266-led-using-guide-js/</link>
         <guid isPermaLink="true">http://nyl.io/blog/2015/08/esp8266-led-using-guide-js/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>My Scrappy Guide.js</title>
+        <description>&lt;p&gt;Project Github Link: https://github.com/neuralfirings/guide&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Over the past few posts, I’ve written some guides and tutorials on using the &lt;a href=&quot;http://blog.nyl.io/tag/esp8266/&quot;&gt;ESP8266 chip&lt;/a&gt;. People who read it seems to like I would like to continue publishing more of these as I venture into different hardware &amp;amp; software projects.&lt;/p&gt;
+
+&lt;p&gt;Some projects I’d like to try: Internet Controlled Motor (continued), Keychain/Pendant Gameboy emulator, Alternative Reality App, and so on. As I go through these projects, I visit tutorial sites because the internet is how I learn things these days. Oftentimes, it’s hard to glance and get a good idea of what to do in the tutorials. Even on my own blog, I don’t think the tutorials and guides I write are that easy to parse.&lt;/p&gt;
+
+&lt;p&gt;So I scrapped together &lt;a href=&quot;https://github.com/neuralfirings/guide&quot;&gt;Guide.js&lt;/a&gt; to make it easier to write iFixit style tutorial guide. I like their style. It forces writers to have clear images. The bullets make it seem less intimidating. The layout makes it easy to scroll through and get a rough idea before you dive in.&lt;/p&gt;
+
+&lt;h4 id=&quot;guide-template-features&quot;&gt;Guide Template Features&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;iFixit Style Guides&lt;/strong&gt;: big images (optional carousel) on the left side and text on the right&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Responsive&lt;/strong&gt;: when the screen is smaller, the title bounce above the images and the image becomes full screen&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Extensible Main Feature&lt;/strong&gt;: Have a step that doesn’t involve images? That’s fine too. You can put whatever you want as the “main feature” of a given step&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;example-1-simple-image-based-guide&quot;&gt;Example 1: Simple Image Based Guide&lt;/h2&gt;
+&lt;div class=&quot;guide-step&quot;&gt;
+  &lt;div class=&quot;guide-images&quot;&gt;
+    &lt;img src=&quot;http://www.nyl.io/guide/01_breadboard.jpg&quot; data-caption=&quot;Fritzing Bread Board View&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;guide-text&quot;&gt;
+    &lt;h2 class=&quot;guide-title&quot;&gt;Step 1&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Open Fritzing&lt;/li&gt;
+      &lt;li&gt;Make sure you're in BreadBoard View&lt;/li&gt;
+      &lt;li&gt;Search for components and drag in to mimic your setup&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;guide-step&quot;&gt;
+  &lt;div class=&quot;guide-images&quot;&gt;
+    &lt;img src=&quot;http://www.nyl.io/guide/02a_pcb_airwires.jpg&quot; data-caption=&quot;Fritzing PCB View: Airwires&quot; /&gt;
+    &lt;img src=&quot;http://www.nyl.io/guide/02b_pcb_routed.jpg&quot; data-caption=&quot;All airwires are routed and board is resized&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;guide-text&quot;&gt;
+    &lt;h2 class=&quot;guide-title&quot;&gt;Step 2&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Switch to PCB Tab&lt;/li&gt;
+      &lt;li&gt;Click on components and use Cmd+R/Ctrl+R to rotate&lt;/li&gt;
+      &lt;li&gt;You can drag components around by holding down the left mouse button&lt;/li&gt;
+      &lt;li&gt;Click on the wires to route and add bendpoints&lt;/li&gt;
+      &lt;li&gt;Resize the board appropriately&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;the-code&quot;&gt;The Code&lt;/h4&gt;
+&lt;p&gt;```&lt;/p&gt;
+&lt;div class=&quot;guide-step&quot;&gt;
+  &lt;div class=&quot;guide-images&quot;&gt;
+    &lt;img src=&quot;http://www.nyl.io/guide/01_breadboard.jpg&quot; data-caption=&quot;Fritzing Bread Board View&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;guide-text&quot;&gt;
+    &lt;h2 class=&quot;guide-title&quot;&gt;Step 1&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Open Fritzing&lt;/li&gt;
+      &lt;li&gt;Make sure you're in BreadBoard View&lt;/li&gt;
+      &lt;li&gt;Search for components and drag in to mimic your setup&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;guide-step&quot;&gt;
+  &lt;div class=&quot;guide-images&quot;&gt;
+    &lt;img src=&quot;http://www.nyl.io/guide/02a_pcb_airwires.jpg&quot; data-caption=&quot;Fritzing PCB View: Airwires&quot; /&gt;
+    &lt;img src=&quot;http://www.nyl.io/guide/02b_pcb_routed.jpg&quot; data-caption=&quot;All airwires are routed and board is resized&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;guide-text&quot;&gt;
+    &lt;h2 class=&quot;guide-title&quot;&gt;Step 2&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Switch to PCB Tab&lt;/li&gt;
+      &lt;li&gt;Click on components and use Cmd+R/Ctrl+R to rotate&lt;/li&gt;
+      &lt;li&gt;You can drag components around by holding down the left mouse button&lt;/li&gt;
+      &lt;li&gt;Click on the wires to route and add bendpoints&lt;/li&gt;
+      &lt;li&gt;Resize the board appropriately&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h2 id=&quot;example-2-using-different-main-components&quot;&gt;Example 2: Using different Main Components&lt;/h2&gt;
+
+&lt;p&gt;If you want something more complex, you can also use the &lt;code&gt;guide-main&lt;/code&gt; class to put in any random thing, like code blocks or presentations (which I do using &lt;a href=&quot;https://github.com/impress/impress.js&quot;&gt;Impress.js&lt;/a&gt;… well, a hacked version I made with some added features like captioning).&lt;/p&gt;
+
+&lt;div class=&quot;guide-step&quot;&gt;
+  &lt;div class=&quot;guide-main&quot;&gt;
+    &lt;pre&gt;
+      &lt;code&gt;
+var ua = navigator.userAgent.toLowerCase();
+if(ua.search(/(iphone)|(ipod)|(android)/) != -1) {
+  $(&quot;.not-for-mobile&quot;).hide();
+  $(&quot;.for-mobile&quot;).show();
+}
+else {
+  $(&quot;.not-for-mobile&quot;).show();
+  $(&quot;.for-mobile&quot;).hide();
+}  
+      &lt;/code&gt;
+    &lt;/pre&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;guide-text&quot;&gt;
+    &lt;h2 class=&quot;guide-title&quot;&gt;Step 1: Some title&lt;/h2&gt;
+    Here are some example code as the main feature. 
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;guide-step&quot;&gt;
+  &lt;div class=&quot;guide-main&quot;&gt;
+    &lt;div class=&quot;for-mobile&quot;&gt;
+    &lt;a target=&quot;_blank&quot; href=&quot;http://nyl.io/impress/espmotor.html?mobile=on&quot;&gt;&lt;img src=&quot;http://nyl.io/impress/espmotor.png&quot; /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;not-for-mobile&quot; style=&quot;position:relative; padding-bottom: 75%; padding-top: 25px; &quot;&gt;
+    &lt;iframe class=&quot;macdown-hide&quot; frameborder=&quot;0&quot; src=&quot;http://nyl.io/impress/espmotor.html&quot; style=&quot;position: absolute; top:0; left:0; width: 100%; height: 100%&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;guide-text&quot;&gt;
+    &lt;h2 class=&quot;guide-title&quot;&gt;Step 2: Some other title&lt;/h2&gt;
+    &lt;p&gt;This is something made with impress.js.. well, a hacked version made for presenting with captions and some tweaked for mobile &quot;support.&quot;&lt;/p&gt;
+    &lt;div class=&quot;for-mobile&quot;&gt;
+      Click on the diagram on the left to go through the workflow. It will open up a new page. Once you are on the new page, click on the RIGHT SIDE of the screen to go forward, and click on the LEFT SIDE of the screen to go back. 
+    &lt;/div&gt;
+    &lt;div class=&quot;not-for-mobile&quot;&gt;
+      Click on the diagram on the left to go through the workflow.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;the-code-1&quot;&gt;The Code&lt;/h4&gt;
+&lt;p&gt;```&lt;/p&gt;
+&lt;div class=&quot;guide-step&quot;&gt;
+  &lt;div class=&quot;guide-main&quot;&gt;
+    &lt;pre&gt;
+      &lt;code&gt;
+var ua = navigator.userAgent.toLowerCase();
+if(ua.search(/(iphone)|(ipod)|(android)/) != -1) {
+  $(&quot;.not-for-mobile&quot;).hide();
+  $(&quot;.for-mobile&quot;).show();
+}
+else {
+  $(&quot;.not-for-mobile&quot;).show();
+  $(&quot;.for-mobile&quot;).hide();
+}  
+      &lt;/code&gt;
+    &lt;/pre&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;guide-text&quot;&gt;
+    &lt;h2 class=&quot;guide-title&quot;&gt;Step 1: Some title&lt;/h2&gt;
+    Here are some example code as the main feature. 
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;guide-step&quot;&gt;
+  &lt;div class=&quot;guide-main&quot;&gt;
+    &lt;div class=&quot;for-mobile&quot;&gt;
+    &lt;a target=&quot;_blank&quot; href=&quot;http://nyl.io/impress/espmotor.html?mobile=on&quot;&gt;&lt;img src=&quot;http://nyl.io/impress/espmotor.png&quot; /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;not-for-mobile&quot; style=&quot;position:relative; padding-bottom: 75%; padding-top: 25px; &quot;&gt;
+    &lt;iframe class=&quot;macdown-hide&quot; frameborder=&quot;0&quot; src=&quot;http://nyl.io/impress/espmotor.html&quot; style=&quot;position: absolute; top:0; left:0; width: 100%; height: 100%&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;guide-text&quot;&gt;
+    &lt;h2 class=&quot;guide-title&quot;&gt;Step 2: Some other title&lt;/h2&gt;
+    &lt;p&gt;This is something made with impress.js.. well, a hacked version made for presenting with captions and some tweaked for mobile &quot;support.&quot;&lt;/p&gt;
+    &lt;div class=&quot;for-mobile&quot;&gt;
+      Click on the diagram on the left to go through the workflow. It will open up a new page. Once you are on the new page, click on the RIGHT SIDE of the screen to go forward, and click on the LEFT SIDE of the screen to go back. 
+    &lt;/div&gt;
+    &lt;div class=&quot;not-for-mobile&quot;&gt;
+      Click on the diagram on the left to go through the workflow.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h2 id=&quot;next-steps&quot;&gt;Next Steps&lt;/h2&gt;
+
+&lt;p&gt;I will use &lt;a href=&quot;https://github.com/neuralfirings/guide&quot;&gt;Guide.js&lt;/a&gt; to write guides for this blog going forward, and maybe write a Guide to the Guide. Hehe. If I want to get really fancy, create some sort of a Markdown conversion since my blog is written using Markdown.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 02 Aug 2015 17:43:45 -0700</pubDate>
+        <link>http://nyl.io/blog/2015/08/guidejs/</link>
+        <guid isPermaLink="true">http://nyl.io/blog/2015/08/guidejs/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>PCBs Misbehaving</title>
+        <description>&lt;p&gt;I got my custom PCBs from iTEAD last week. So exciting, right?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/content/images/2015/07/pcbmotor_pcbs.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I plugged everything in and…. WARHN warhn (failure horn 📢).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/content/images/2015/07/failwhale.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+
+&lt;p&gt;So much trouble trying to figure out what’s the issue. The LED would sometimes turn on, sometimes it wouldn’t, sometimes the LED would turn on and stay on. I think this indicated that the ESP8266 was frozen. The motor would work maybe 10% of the time. And it was all completely random. I checked my soldering for loose connections. Resoldered a few suspicious (but I think they were fine) connections. Poke and prodded this little green thing with my &lt;a href=&quot;http://amzn.to/1MuPvhT&quot;&gt;multimeter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;root-cause-i-think-maybe&quot;&gt;Root Cause (I think? Maybe?)&lt;/h2&gt;
+
+&lt;p&gt;I suspect it’s had something to do with my 5V Regulator. It seems to be working off a lot of heat. I didn’t have a heat sink for it. Trying to debug it let me all over the place. Sometimes it would give me a steady 5V (or 4.9V), other times it would putt along at a 4.2V. I suspect this might be because my 9V battery was losing too much juice too quickly. The 5V Regulator I used (&lt;a href=&quot;https://www.adafruit.com/products/2164&quot;&gt;7805 TO-220&lt;/a&gt;) needs a minimum of 7V to output a consistent 5V, according to Adafruit product description. So 4.2V output is no go since the L293D motor driver has a minimum supply voltage of 4.5V (and a max of 36!) so that was a no go.&lt;/p&gt;
+
+&lt;p&gt;The other problem was my LED. I got some LED that came with built in resistors, but I think when I soldered them in I soldered them above where the resistor were. So I had to redo the LED. I used a handy white LED the second time since white LEDs have the highest forward voltage. I ended up tearing up the copper traces during this “fix” and had to solder in wires manually (see pic below).&lt;/p&gt;
+
+&lt;h2 id=&quot;solution-ish&quot;&gt;Solution (ish)&lt;/h2&gt;
+
+&lt;p&gt;To solve the 5V Regulator problem I decided to just F it and use a different battery pack. I got out my handy 4 AA battery. This starts at a 6V and works its way down to a 4.4V. With a fresh set of batteries it’s a little too high for the ATtiny85 chip, which has a max supply voltage of 5.5V. However, it doesn’t stay at 6V for long and the batteries I’m using is definitely not at 6V. I then added a manual wire connection between the Input on the 5V regulator and the VCC on the L293D chip. Basically, I bypassed the 5V regulator and plugged the power source directly onto the ATtiny85 and L293D Motor Driver.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/content/images/2015/07/pcbmotor_hack_comments.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s probably not the safest or the smartest thing to do. BUT IT WORKS! It’s so beautiful it works. And it’s tidy.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Before (breadboard):&lt;/strong&gt;
+&lt;img src=&quot;/content/images/2015/07/pcbmotor_prepcb.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;After (custom PCB):&lt;/strong&gt;
+&lt;img src=&quot;/content/images/2015/07/pcbmotor_setup.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So tidy. Much tiny.&lt;/p&gt;
+
+&lt;h2 id=&quot;next-steps&quot;&gt;Next Steps&lt;/h2&gt;
+
+&lt;p&gt;To get these components in their comfortable range of operation, I’ll try routing the ESP8266 (&amp;amp; LED) and ATtiny85 through a 3V Regulator and leave the L293D Motor Driver (&amp;amp; Stepper Motor) directly connected to the 9V Battery.&lt;/p&gt;
+
+&lt;table style=&quot;font-size: 0.7em&quot;&gt;
+&lt;tr&gt;&lt;th&gt;Component&lt;/th&gt;&lt;th&gt;Min Supply Voltage&lt;/th&gt;&lt;th&gt;Max Supply Voltage&lt;/th&gt;&lt;th&gt;Current Power&lt;/th&gt;&lt;th&gt;Proposed Power&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;ESP8266&lt;/td&gt;&lt;td&gt;3.3V&lt;/td&gt;&lt;td&gt;3.6V&lt;/td&gt;&amp;lt;td colspan=2 style=&quot;text-align: center&quot;&amp;gt;3V Regulator&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;LED&lt;/td&gt;&lt;td&gt;2.5V&lt;/td&gt;&lt;td&gt;3.2V&lt;/td&gt;&amp;lt;td colspan=2 style=&quot;text-align: center&quot;&amp;gt;ESP8266 (3.2 V on HIGH)&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;ATtiny85&lt;/td&gt;&lt;td&gt;1.8V&lt;/td&gt;&lt;td&gt;5.5V&lt;/td&gt;&lt;td&gt;5V Regulator&lt;/td&gt;&lt;td&gt;3V Regulator&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;L293D Motor Driver&lt;/td&gt;&lt;td&gt;4.6V&lt;/td&gt;&lt;td&gt;36V&lt;/td&gt;&lt;td&gt;5V Regulator&lt;/td&gt;&lt;td&gt;Battery (4.4-9V)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Stepper Motor&lt;/td&gt;&lt;td&gt;5V&lt;/td&gt;&lt;td&gt;5V&lt;/td&gt;&amp;lt;td colspan=2 style=&quot;text-align: center&quot;&amp;gt;L293D&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;also-next-steps&quot;&gt;Also Next Steps&lt;/h2&gt;
+
+&lt;p&gt;Rather than waiting another two weeks to get a PCB, I’m researching how to etch my own PCB at home. It seems like a huge hassle, but I figure it’s probably worth being able to rapidly prototyping board after board.&lt;/p&gt;
+
+&lt;p&gt;The problem is I’m woefully undersupply. I looked into it, and I’ll need something like:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Drill press (for the through holes and vias)&lt;/li&gt;
+  &lt;li&gt;Feric Chloride (sp?) for etching away the copper&lt;/li&gt;
+  &lt;li&gt;FR4 Copper Boards&lt;/li&gt;
+  &lt;li&gt;Safety stuff: gloves, goggles, work mask&lt;/li&gt;
+  &lt;li&gt;Laser printer (or more chemicals that I’ll probably splash on things I shouldn’t splash weird chemicals on. Like &lt;a href=&quot;http://ajaxthedog.com&quot;&gt;my dog&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Some tool to cut the FR4 material&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If I want to get fancy, I might need:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Laminator&lt;/li&gt;
+  &lt;li&gt;A bunch of sheets that does fancy transfer things&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Seems like a lot of stuff.&lt;/p&gt;
+
+&lt;p&gt;Is it worth it?&lt;/p&gt;
+</description>
+        <pubDate>Sun, 26 Jul 2015 17:27:29 -0700</pubDate>
+        <link>http://nyl.io/blog/2015/07/pcbs-misbehaving/</link>
+        <guid isPermaLink="true">http://nyl.io/blog/2015/07/pcbs-misbehaving/</guid>
         
         
       </item>
