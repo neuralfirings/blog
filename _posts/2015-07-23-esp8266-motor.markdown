@@ -1,0 +1,171 @@
+---
+layout: post
+title: Wifi Controlled Motors using ESP8266 and ATtiny85
+date: '2015-07-23 01:11:51'
+---
+
+Picking up where [we left off](http://blog.nyl.io/esp8266-led-arduino/), I'm still on my way to create the cheap wifi connected, internet controlled motor. I think I found my perfect combination of awesome. 
+
+<div class="for-mobile">
+Click on the diagram below to go through the workflow. It will open up a new page. Once you are on the new page, click on the RIGHT SIDE of the screen to go forward, and click on the LEFT SIDE of the screen to go back. 
+<a target="_blank" href="http://nyl.io/impress/espmotor.html?mobile=on"><img src="http://nyl.io/impress/espmotor.png"></a>
+</div>
+
+<div class="not-for-mobile">
+Click on the diagram below to go through the workflow.</div>
+<div class="not-for-mobile" style="position:relative; padding-bottom: 75%; padding-top: 25px; ">
+<iframe frameborder="0" src="http://nyl.io/impress/espmotor.html" style="position: absolute; top:0; left:0; width: 100%; height: 100%"></iframe></div>
+
+<p style="color: #A00; font-weight: bold; background: #FEE; border-radius: 5px; border: solid 5px #A00; padding: 10px; box-sizing: border-box;">
+PLEASE NOTE: The ESP8266, index.php, and light.json part was covered <a href="http://blog.nyl.io/esp8266-led-arduino/">the previous tutorial</a>, which goes over how to program an ESP8266 with Arduino IDE, and hook it up to the internet. It also explains how the ESP8266 should ping light.json, and how index.php sends info to light.json. Again: <a href="http://blog.nyl.io/esp8266-led-arduino/">here's the link to the previous tutorial</a>!</p>
+
+And as always, you can find the code, diagrams, and all sorts of goodies on this project's [GitHub Page](https://github.com/neuralfirings/esp8266led). 
+
+## Gather Ye, Ingredients
+
+**Main Components:**
+
+1. [ESP8266-01 Wifi Chip](http://amzn.to/1Lu6QHu)
+2. [Arduino Uno](http://amzn.to/1fhk38N) for flashing the ATtiny85
+4. [ATTiny85](http://amzn.to/1gJgsRW)
+5. [L293D Motor Driver](http://amzn.to/1CKtcSm)
+6. [5VDC Stepper Motor](http://amzn.to/1HDGT4d)
+
+**General Electronics**
+
+1. [10uF Capacitor](http://amzn.to/1gJg9Xs) (link is to a bunch of assorted capacitors)
+2. [LED](http://amzn.to/1Otn0iU) This link comes with assorted LEDs and a pack of resistors to boot. For this project, use a purple or white light (closest to 3.3V). Or you know. Use resistors. You can also use [LEDs with built in resistors](http://www.digikey.com/product-detail/en/0/754-1891-ND) to be safe.
+3. [3.3V Regulator](https://octopart.com/ld1117v33-stmicroelectronics-526800)
+4. [5V Regulator](http://amzn.to/1HDGY7Z)
+5. [9V Battery](http://amzn.to/1HDHrqO)
+6. [9V Battery Connector](http://amzn.to/1MjBPq1)
+
+## Step 1: Prep the Arduino Uno as an ISP
+
+Before, I had whipped up this whole system with an Arduino controlling the motor instead of an ATtiny85 chip. I learned that you can actually flash some Arduino programs on the ATtiny85 chip, which is AWESOME. The ATtiny85 chip (the thing I'm holding here) is smaller and cheaper than the Arduino. 
+
+![](http://blog.nyl.io/content/images/2015/07/arduino_vs_attiny.jpg)
+
+So adorbs, right?
+
+Prepping the Arduino:
+
+1. [Download the Arduino IDE](https://www.arduino.cc/en/main/software) if you haven't already
+2. Hook up the Arduino Uno to your computer using a printer cable
+3. Open up the ArduinoISP sketch (File > Examples > ArduinoISP) ![](http://blog.nyl.io/content/images/2015/07/arduinoisp.jpg)
+4. Click "Upload" button (the right arrow above the code area) ![](http://blog.nyl.io/content/images/2015/07/arduinoupload.jpg)
+
+Then **BAM**! Your Arduino is now ready to program Atmel Chips!
+
+## Step 2: Add ATtiny85 to Arduino IDE
+
+Now we're going to add ATtiny85 to the list of available boards. This way, you can use Arduino language to program ATtiny85.
+
+1. Go to: Arduino > Preferences ![](http://blog.nyl.io/content/images/2015/07/arduino_pref.jpg)
+
+2. Add this to Additional Board Manager URLs at the bottom and click "OK" when done: https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package\_damellis\_attiny\_index.json ![](http://blog.nyl.io/content/images/2015/07/arduino_boardmanagerurl.jpg)
+
+3. Go to: Tools > Board > Board Manager ![](http://blog.nyl.io/content/images/2015/07/arduino_boardmanager.jpg)
+
+4. Search for "attiny," click on it, then click "install" ![](http://blog.nyl.io/content/images/2015/07/arduino_installattiny.jpg)
+
+5. Restart Arduino
+
+6. Go to: Tools > Board > ATtiny ![](http://blog.nyl.io/content/images/2015/07/arduino_attiny.jpg)
+
+## Step 3: Wire it Up
+Wire everything up like so. The Arduino IDE will send the code directly to ATtiny85. Please note the 10uF capacitor. This prevents the Arduino from resetting and starting up bootloader mode.
+
+![](http://blog.nyl.io/content/images/2015/07/arduino_attiny_bb.png)
+<small>(image source: [High Low Tech Blog](http://highlowtech.org/?p=1706))</small>
+
+Here is the pin labels for the ATtiny85 (and ATtiny45)
+![](/content/images/2015/08/attiny_pinout.png)
+
+## Step 4: Code for the ATtiny85
+
+I based this off of [Adafruit's Arduino/Stepper Motor Tutorial](https://learn.adafruit.com/adafruit-arduino-lesson-16-stepper-motors). I made a few tweaks to Adafruit's code. You'll see the changes in where I commented out the original values and why. 
+
+Go to: File > New and copy/paste the following code:
+
+```
+/*
+Adafruit Arduino - Lesson 16. Stepper
+Modified to take input from ESP8266 instead of user
+*/
+ 
+#include <Stepper.h>
+ 
+// NYL: changed the following 4 lines to match ATtiny85's pin number
+int in1Pin = 0; // was 12
+int in2Pin = 1; // was 11
+int in3Pin = 2; // was 10
+int in4Pin = 3; // was 9
+int readPin = 4; // NYL: new line, not in original Adafruit Tutorial
+ 
+Stepper motor(512, in1Pin, in2Pin, in3Pin, in4Pin);  
+
+void setup()
+{
+  pinMode(in1Pin, OUTPUT);
+  pinMode(in2Pin, OUTPUT);
+  pinMode(in3Pin, OUTPUT);
+  pinMode(in4Pin, OUTPUT);
+  pinMode(readPin, INPUT);  // NYL: new line, listens for input on readPin
+  
+  motor.setSpeed(20);
+}
+
+// NYL: changed this to read input from ESP, 
+// then proceed at 32 steps every 1 second
+void loop() 
+{
+  if (digitalRead(readPin)==1) {
+    motor.step(32);
+  }
+  delay(1000);
+}
+```
+
+File > Save because you should always save your work!!
+
+## Step 5: Flash the ATtiny85
+
+All righty! Your ISP (Arduino Uno) is ready. Your code is ready. Let's flash some ICs! 🎉🎉🎉 
+
+Go to "Tools" and select the following settings:
+
+![](/content/images/2015/08/attiny_toolmenu.jpg)
+
+Just click "Upload" (the right arrow button).
+![](http://blog.nyl.io/content/images/2015/07/arduino_upload2.jpg)
+
+There are some other tutorials on flashing the ATtiny85 you can look at if this doesn't work:
+
+* High Low Tech Blog Posts ([this one](http://highlowtech.org/?p=1706) and [that one](http://highlowtech.org/?p=1695)) are great. 
+* There's also [this post](https://www.hackster.io/arjun/programming-attiny85-with-arduino-uno) on Hackster that is pretty good. 
+
+
+## Step 6: Hook Everything Up
+
+Last I hooked everything up to get the motor running off of interwebs bits. I put some scotch tape on the motor so you can see it turning more easily.
+
+<iframe class="imgur-embed" width="100%" height="404" frameborder="0" src="http://i.imgur.com/mRuKtxu.gifv#embed"></iframe>
+
+Here's a cleaned up drawing of the wiring:
+
+![](http://blog.nyl.io/content/images/2015/07/esp8266_attiny_noftdi_reg_9v_bb.png)
+
+In this diagram, the top breadboard power track represents 5V, and the bottom represents 3.3V. The basic logic follows the diagram at the beginning of this blog post. Rather than conceptual arrows, we have wires and breadboards.
+
+Now, if you go to your `index.php` page, you can click the "Light On" and "Light Off" button. Only now, the light *and* the motor should turn on. 
+
+OOOOO... fancy.
+
+## Next Steps 
+
+Just when you think you've shrunken everything, there's a way to get things even smaller. For me, the next step is to make a Custom PCB of this and get rid of all the wires and breadboard. 
+
+After that, I might even start looking into getting the surface mount version of it working, so it's even smaller (and cheaper). At this point, the battery and the motor will be the biggest pieces. So if you guys know of smaller 5V battery and motors, [drop me a line!](mailto: _@nyl.io) ✉️
+
+Ok. Now go make stuff.

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Making Custom PCBs</title>
+  <meta name="description" content="PLEASE NOTE: I've written a new and improved version of this guide.Yeah! Updates!!">
+
+  <link rel="stylesheet" href="/blog/css/main.css">
+  <link rel="canonical" href="http://nyl.io/blog/2015/06/making-custom-pcbs/">
+  <link rel="alternate" type="application/rss+xml" title="nyl.io" href="http://nyl.io/blog/feed.xml" />
+
+
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="/blog/favicon.ico">
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/blog/">nyl.io</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/blog/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Making Custom PCBs</h1>
+    <p class="post-meta">Jun 26, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <div class="box-danger">
+PLEASE NOTE: I've written a <a href="http://blog.nyl.io/hello-world-custom-pcb-fritzing/">new and improved version of this guide</a>.<br /><br />Yeah! Updates!!</div>
+
+<p>We’ve all see something like this before.</p>
+
+<p><img src="/content/images/2015/06/v2.jpg" alt="" /></p>
+
+<p>The simple breadboard with a messy, beautiful rainbow of wires sticking this way and that. This part of <a href="http://blog.nyl.io/dog-treat-dispenser-v3/">a project</a> is where I control a stepper motor, which tells the dispenser to twist the fan looking thing and dispense a treat. Luckily, Adafruit has published <a href="https://learn.adafruit.com/adafruits-raspberry-pi-lesson-10-stepper-motors/overview">this exact tutorial</a>. So I followed the Adafruit tutorial and plugged in a whole bunch of wires where the tutorial told me to plug. Easy enough! But now, how does one tidy things up?</p>
+
+<p>Why, <strong>printed circuit boards</strong>, of course! You know, those green things with lines all over them. Don’t worry. It’s not that hard.</p>
+
+<h2 id="meet-fritzing-your-friendly-pcb-designer">Meet Fritzing, your friendly PCB designer</h2>
+
+<p><a href="http://fritzing.org/download/">Fritzing</a> is kind of like LEGOs of PCB design. It’s simple, good for learning. A stepping stone to Eagle or KiCAD.</p>
+
+<h3 id="step-1-virtual-breadboard">Step 1: Virtual Breadboard</h3>
+
+<p>This is my favorite part of Fritzing. As a novice hardware hacker, it helps that I start with something I already have working: breadboards and jumper wires.</p>
+
+<p><img src="http://blog.nyl.io/content/images/2015/06/fritzing_breadboard-1.png" alt="" /></p>
+
+<p>With Fritzing, you start with a virtual breadboard set up. Click the “Breadboard” tab. Here, you can search for various components, like “breadboard” and “Raspberry Pi” and “L293D” (the motor driver I used).</p>
+
+<p>Add components to the workspace. Then click to start dragging wires around. Protip: press the control (Windows) or cmd (Mac) key to make the wires all bendy… just like in real life.</p>
+
+<h3 id="step-2-schematics">Step 2: Schematics</h3>
+
+<p>If you switch to the Schematics tab, you’ll see an outline of the schematics. But… I didn’t really deal with this view very much. So let’s skip it. =P</p>
+
+<h3 id="step-3-pcb">Step 3: PCB</h3>
+
+<p>Now we get to the fun part! When you open up the PCB view, you should see something like this.</p>
+
+<p><img src="/content/images/2015/06/fritzing_pcb-1.png" alt="" /></p>
+
+<p>This is just the components you selected. Well, they are holes to plug in the components you selected.</p>
+
+<p>The dotted lines represent where the connections should go. Our goal is to turn these dotted line (airwires) into routes. To do this, just drag a dotted line into place.</p>
+
+<p><img src="/content/images/2015/06/Pasted_Image_6_25_15__1_15_AM.png" alt="" /></p>
+
+<p>The goal is to create a board without any routes criss crossing with another route. That would be bad. Electricity would ram into one another and we will not have a good time.</p>
+
+<p>One way to tackle this is to use multiple layers. For me, 2 layers was sufficient to route all the airwires without anything crossing.</p>
+
+<p>To connect a route on the top layer with one on the bottom layer, you use via. As in, go from top to bottom via this connection. To do this add a bend point by right clicking on route then clicking “Add a Bendpoint.” Then, right click on the bend point and choose “Convert Bendpoint to Via.” Then you can right click on different parts of the route to move between layers.</p>
+
+<p><img src="/content/images/2015/06/Pasted_Image_6_25_15__1_19_AM.png" alt="" /></p>
+
+<p>Eventually, all your routes come together nice and cleanly. You can check that your routes are indeed error free by using the nifty design checker (Tool Bar &gt; Route &gt; Design Rule Check).</p>
+
+<p>I ended up with something like this.</p>
+
+<p><img src="/content/images/2015/06/Pasted_Image_6_25_15__1_25_AM-1.png" alt="" /></p>
+
+<p>The dots on top is just a marking I made to tell me which pins I need to solder. Or more importantly, which pins I can use as practice. My soldering skills are… lacking.</p>
+
+<p>You can add text (like the dots or the “badwolf v3” in the bottom left) by searching for “silkscreen” under the Parts section in the right toolbar.</p>
+
+<h2 id="production">Production</h2>
+
+<p>Now that we have a PCB sketch, let’s get to making.</p>
+
+<p>What I ended up doing is exporting to Gerber files. It’s a series of files that tells the machine where to drill holes, how to label things, and of course where to put down the copper so your precious electricity can flow to their rightful homes.</p>
+
+<p>You can preview your Gerber files to make sure they work using <a href="http://www.gerblook.org">GerbLook</a>.</p>
+
+<h3 id="pcb-prototyping-companies">PCB Prototyping Companies</h3>
+
+<p>I did a few searches, and found some good options. This is based on:</p>
+
+<ul>
+  <li>shipping to Seattle</li>
+  <li>2 layer board</li>
+  <li>board that measures 1.5x1.75 in<sup>2</sup>.</li>
+</ul>
+
+<p>Actual mileage may vary depending on your design.</p>
+
+<table style="font-size: 0.75em">
+<tr style="font-weight: bold"><td>Company</td><td>QTY</td><td>Lead Time (to Seattle)</td><td>Price</td><td>Limits/Pricing</td></tr>
+<tr><td><a href="http://oshpark.com">OSHPark</a></td><td>3</td><td>10-14 business days<br />8-12 production + 2 shipping</td><td>$12<br />$12 PCB + $0 shipping</td><td>$5/in<sup>2</sup></td></tr>
+<tr><td><a href="http://pcbnet.com">PCBNet</a></td><td>1</td><td>9 BDs<br />5 prod + 4 shipping</td><td>$25<br />$25 PCB + $0 shipping</td><td>under 60in<sup>2</sup></td></tr>
+<tr><td><a href="http://imall.iteadstudio.com">ITEAD</a></td><td>10</td><td>6 BDs<br />4 prod + 2 shipping</td><td>$28<br />$10 PCB + $18 shipping</td><td>under 5x5cm<sup>2</sup></td></tr>
+<tr><td><a href="http://imall.iteadstudio.com">ITEAD</a></td><td>10</td><td>20 BDs (could be longer)<br />4 prod + 16-? shipping</td><td>$15<br />$10 PCB + $5 shipping</td><td>under 5x5cm<sup>2</sup></td></tr>
+<tr><td><a href="http://seeedstudio.com">SeeedStudio</a></td><td>1</td><td>18-48 BDs<br />3 prod + 15-45 shipping</td><td>$15<br />$10 PCB + $5 shipping</td><td>under 5x5cm<sup>2&lt;/sup
+<tr><td><a href="http://seeedstudio.com">SeeedStudio</a></td><td>1</td><td>5 BDs<br />3 production + 2 shipping</td><td>$40<br />$10 PCB + $30 shipping</td><td>under 5x5cm<sup>2</sup></td></tr>
+<tr><td><a href="http://fr.com">Fritzing</a></td><td>1</td><td>17-25 BDs<br />7-11 production + 10-14 shipping</td><td>$21<br />$17 PCB + $4 shipping</td><td>$5.20 + $0.96/cm<sup>2</sup></td></tr>
+
+
+In the US, the fastest/cheapest seem to be OSHPark if you have small boards. OSHPark (stands for open source hardware park) charges by the square inch. So if you have a tinyass board like my dog treat thing, it's only $12 or less. If you have a 3x3in<sup>2</sup> board though, it's $45, even though each side only doubled in length. Yay. Behold the power of exponents. 
+
+I ordered from ITEAD. Paid a little extra for DHL Express. Still, it came down to about $3/PCB since they ship 10 QTY. I did end up having to use an extra PCB because I'm apparently the kind of idiot who solders things backwards the first time around. 
+
+![](http://blog.nyl.io/content/images/2015/06/01_boards.jpg)
+
+Not bad, eh? 
+
+Ok. Now go and make stuff. 
+</sup></td></tr></table>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">nyl.io</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>nyl.io</li>
+          <li><a href="mailto:hi@nyl.io">hi@nyl.io</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/neuralfirings">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">neuralfirings</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/nliang">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">nliang</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">In order to be old and wise, you must first be young and stupid.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

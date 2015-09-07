@@ -1,0 +1,32 @@
+---
+layout: post
+title: Dogfood
+date: '2015-08-05 15:09:58'
+---
+
+> Eating your own dog food, also called dogfooding, is a slang term used to reference a scenario in which a company uses its own product to validate the quality and capabilities of the product. — [Wikipedia](http://en.wikipedia.org/wiki/Eating_your_own_dog_food)
+
+![](/content/images/2015/08/dogfood-1.jpg)
+
+When I design products, I make an effort to regularly use the products I make. If I write a platform or [library](http://blog.nyl.io/guidejs/), I [use it myself](http://blog.nyl.io/esp8266-led-using-guide-js/). It's something so obvious, but surprisingly uncommon. 
+
+### Knowing the Community
+
+One side effect of eating your own dogfood is that you become a part of the community. You are using the same products, sharing the same goals, and it's just easier to connect with your community that way. 
+
+Being a part of the community opens you up to a world of insights. They can provide feedback and ideas that you'd never come across just by yourself. 
+
+### Personalize the Pain
+
+Pain avoidance is a great motivator. We can't help it. We are evolutionarily wired to avoid things that cause us pain. It's how we learn to not stick our hands in the fire even though it looks so pretty. 
+
+Taken with the point above ("Knowing the Community"), you aren't just solving pain for yourself, but also for your friends. It works for both selfish and unselfish people. 
+
+### Quicker Product Development
+
+Dogfooding also enables you to develop product at a quicker pace. Rather than talking to customers for every minor tweak or product decision, you can reflect on your own experience, anecdotes and observations from being a part of and interacting with members of the community. It's just easier for the left brain to talk with the right brain than to conduct a focus group, and quicker, and easier. 
+
+Of course, the flip side is to not get too cocky about all of this. There's still a lot that you don't know. Move quickly. Remain curious. Confidence is arrogance with a healthy dose of curiosity.
+
+---
+Every designer and product manager should use their own products. Not *try* their own products, but actually *use* it. It will make your lives easier. 

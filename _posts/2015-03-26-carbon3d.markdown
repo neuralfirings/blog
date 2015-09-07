@@ -1,0 +1,64 @@
+---
+layout: post
+title: Carbon3D
+date: '2015-03-26 16:20:00'
+---
+
+![](/content/images/2015/05/carbon3d-1.jpeg)
+
+[Carbon3D](http://carbon3d.com/) unveiled last week at the TED conference. On stage, their demonstration unit that printed a meshy ball structure in about 6 minutes. This print would have taken my home printer maybe 2–3 hours, and an industry printer even longer. Essentially, Carbon3D prints 25–100x faster than current 3D printers. Imagine going to a hardware store with broken desklamp, then getting a replacement part printed in 5 minutes while you grab a cup of coffee or while you wait in the checkout line.
+
+Their TED Video:
+
+<iframe width="853" height="480" src="https://www.youtube.com/embed/ihR9SX7dgRo" frameborder="0" allowfullscreen></iframe>
+
+## How does it works?
+
+The printer starts with plastic resin. Let’s just call it the “goo.” This goo solidifies through exposure to UV light. Underneath the vat of goo, a projector projects cross sections of the print with UV light. The light solidifies one layer of the print, and a print bed lifts the solidified layer up a little bit. Now, traditionally once a layer soldifies, that layer sticks to the bottom of the vat containing the goo. The build plate lifts up a little bit to get the bottom layer unstuck. Then, the printer moves onto the next layer.
+
+![Process Diagram From Carbon3D’s presentation at TED](/content/images/2015/05/carbon3d_process.jpeg)
+
+Carbon3D eliminates this one, small step. With Carbon3D, the bottom of the vat is made with a special material that lets oxygen through. The oxygen makes it so the solidified plastic does not stick to the bottom of the vat. This eliminates the need for the build plate to lift up back down every layer, which speeds up printing.
+
+![](/content/images/2015/05/carbon3d_newprocess.jpeg)
+
+### The beauty of this is that it’s so simple!
+It’s such a small, change that drastically effects the result. I am just as excited about the increased speed as I am by the elegance of the design improvement.
+
+## Material difference?
+
+With this technique, their prints vary in quality — from bouncy rubbery materials to strong plastics used in automotive.
+
+<iframe width="853" height="480" src="https://www.youtube.com/embed/dXIkRsJLXGs" frameborder="0" allowfullscreen></iframe>
+
+[University of North Carolina’s press release](http://www.unc.edu/spotlight/unc-researchers-collaborate-3d-printing-technology/) claims “CLIP enables a very wide range of material to be used to make 3D parts with novel properties, including elastomers, silicones, nylon-like materials, ceramics and biodegradable materials.”
+
+[Carbon3D’s website](http://carbon3d.com/) claims “We’re able to draw from the whole polymer family to meet highly specific application requirements. Elastomers, for example, cover a range of needs, from the high elasticity needed for athletic shoes to the strength and temperature resistance needed for automotive parts.”
+
+In my experience, the plastics used in this process are fragile and brittle. I printed a 2 inch Pony Statue using a similar technology once (a Form 1 machine, which employs UV light projecting on resin), and both of the back legs broke off. Given these material properties, this technique was really good for prototypes, but you can’t use it to print household components that require strength.
+
+Carbon3D introduces to possibilities to this technology with its expanded range of materials — from flexible footware parts to durable automotive parts. It would be interesting to see how these material stands up to their suggested applications.
+
+## Team
+
+The Carbon3D team is hardcore, to put it lightly. The founder, Joseph DeSimone, is a chemist from the University of North Carolina. Others include ex-Tesla, ex-Microsoft, ex-Apple to name a few. Together, the founding team holds patents in the triple digits They are backed with $41 million in funds led by Sequoia (Series A in 2013) and Silver Lake Kraftwerk (Seris B in 2014).
+
+## Some things to keep an eye on
+
+They have not started shipping printers yet. Though according to Re/code, Carbon3D is “already in testing at a few companies, including an automotive company, an athletic apparel company, a design studio and an academic research lab.”
+
+Second, I wonder about the set up and post printing processes. I don’t have experience with Carbon3D of course, but I have used Form 1 which utilizes a similar technology (UV hits goo and turns it into hard plastic). The plastic from Form 1 machines takes a while to fully cure, even after it is removed from the printer. Goo still sticks to the plastic part, and I need to wash it off. Even so, my model didn’t fully harden until a few days later. Albeit, I did not have a UV lightbath, so I used the sparse winter sun in NYC. Still, if you design a part that requires it to be completely hardened or completely dry, you need to factor in post production effort + time.
+
+I am also interested in their claims on the material. The TED talk focused on print speed, but their website other sources makes some amazing claims on the production-ready material properties. University of North Carolina, where many of their founding team taught, mentions printable nylon plastics and ceramics. The materials are not something they focused on in their press launch, but definitely something to keep an eye on.
+
+Last, like all technologies, there are limits. Marketing is great at calling out the benefits, but the limits are usually what I am more interested in. For example, complex parts often require support structures. Even the body and head of my pony structure requires support beams. Support structure adds time, material, and extra manual care in removing the supports. Ultimately, this all leads to increased cost. For prototypers, cost may not be as much of an issue. But, if you were to use this in production, cost is factored into your gross margin and may prevent this technology from penetrating certain low margin, high volume markets like consumer goods (e.g. iPhone cases, toys).
+
+## In the end, the product speaks for itself
+
+I am amped about this technology. There are so many new 3D Printers and Kickstarters magnifying incremental improvements as revolutionary accomplishments. Or worse, magnifying nothing as revolutionary accomplishments.
+
+But it seems Carbon3D can walk the walk. Having a live demo set up during a talk is risky business, but it let the product speak for itself. In the end, having a good product is the best marketing strategy.
+
+---
+
+<small>Thanks to [Mary Huang](https://twitter.com/rhyme_andreason) and [James Zhou](http://www.cs.nyu.edu/~qnzhou/) for feedback on this post and helping me understand exactly how Carbon3D works.</small

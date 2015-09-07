@@ -1,0 +1,17 @@
+---
+layout: post
+title: Why Ghost
+date: '2015-05-13 05:52:14'
+---
+
+Every year or so, I test out some new blogging platform. It's fun, I suppose. Trying out new technology. For a little over a year, I've been writing on [Medium](http://medium.com/@nliang). It was easy. They had a nice interface, and showed promise of traffic and readership. 
+
+They had a nice interface, but ultimately not the one I need. I liked that the editor mirrors the final product. There is no need for preview because the preview is what you see as you write. As I tried to write more, I started using other editors like iA Writer, which used markup. As I got close to publishing, I copy pasted what I wrote in markup over to Medium and spent time tidying up the formatting. In the end, the more I wrote, the less I used the nice interface. 
+
+I also looked at traffic. For the most part, traffic came from outside Medium. External blogs that referred to my article, Twitter, Facebook. There were a few that came from recommends and Medium-related medium (hehe), but not enough to really make a difference. 
+
+In the end, Medium was a nice experiment. But I think it's time to pull my content to my own domain. Also, it was about time for me to trying some new (or old) blogging and writing platform again. That part is the fun part. 
+
+In the end, I choose [Ghost](http://ghost.org) paired with my own domain. It's markup based, which suits the tools I use to write. It has an active community. The developers seem to publish regular updates. And it's focused around blogging, which is nice.
+
+Now that I write these reasons, it all seems so simple. But it's hard to do. Having an active community and publishing regular updates. Both of these are so simple yet difficult at the same time. I suppose that's what makes it worthwhile. 
