@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Hello World, Milling PCBs</title>
+  <meta name="description" content="This post is part of the Hello World Projects.">
+
+  <link rel="stylesheet" href="/blog/css/main.css">
+  <link rel="canonical" href="http://nyl.io/blog/2015/09/hello-world-milling-pcbs/">
+  <link rel="alternate" type="application/rss+xml" title="nyl.io" href="http://nyl.io/blog/feed.xml" />
+
+
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="/blog/favicon.ico">
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/blog/">nyl.io</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/blog/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Hello World, Milling PCBs</h1>
+    <p class="post-meta">Sep 7, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <h5 id="this-post-is-part-of-the-hello-world-projectshelloworld">This post is part of the <a href="/helloworld">Hello World Projects</a>.</h5>
+
+<hr />
+
+<p>There are many ways to create custom PCBs (printed circuit boards). I like milling because the CNC mill can etch the traces, drill the through-holes, and cut the board all with one machine. All in a few minutes if your board is small.</p>
+
+<p><img src="/content/images/2015/09/tracetest_an.jpg" alt="" /></p>
+
+<p>My friendly neighborhood <a href="http://sodo.ms">SoDo MakerSpace</a> has a Shapeoko 2, which I’ve been using. In this tutorial, I’ll show you how mill some PCBs.</p>
+
+<hr />
+
+<div class="guide-step">
+  <div class="guide-images">
+    <img src="http://www.nyl.io/temp.jpg" data-caption="" />
+  </div>
+  <div class="guide-text">
+    <h2 class="guide-title">Ingredients</h2>
+    <strong>Software</strong>
+    <ul>
+      <li><a href="http://fritzing.org/download/">Fritzing <i class="fa fa-external-link"></i></a></li>
+      <li><a href="https://inkscape.org/en/download/">Inkscape <i class="fa fa-external-link"></i></a></li>
+      <li><a href="http://www.makercam.com/">MakerCAM <i class="fa fa-external-link"></i></a> (website)</li>
+    </ul>
+    <strong>Hardware</strong>
+    <ul>
+      <li><a href="http://amzn.to/1VFUA9e">Engraving Bit (20<sup>o</sup>, 0.2mm) <i class="fa fa-external-link"></i></a></li>
+      <li><a href="http://amzn.to/1ip1txr">Drill Bit (0.9mm) <i class="fa fa-external-link"></i></a></li>
+      <li><a href="http://amzn.to/1Uzp8qR">Square Nose Endmill (1/16 inch) <i class="fa fa-external-link"></i></a></li>
+      <li><a href="https://www.inventables.com/technologies/circuit-board-blanks">Copper FR1 Boards <i class="fa fa-external-link"></i></a>, NOT FR4!! <tip class="fa  fa-question-circle" data-content="FR4 is made with fiberglass. When milled, little bits of fiberglass can get inside your lungs and if that happens, you're going to have a bad time." /></li>
+      <li><a href="http://www.shapeoko.com/">Shapeoko 2 <i class="fa fa-external-link"></i></a> running on GRBL</li>
+    </ul>
+  </div>
+</div>
+
+<div class="guide-step">
+  <div class="guide-images">
+    <img src="http://www.nyl.io/temp.jpg" data-caption="" />
+  </div>
+  <div class="guide-text">
+    <h2 class="guide-title">Step 1: Export to SVG</h2>
+    In Fritzing:
+    <ul><li>Export SVG: <click>Export PCB &gt; Etchable SVG</click></li></ul>
+    <br />
+    <div class="fa-bullet"><i class="fa fa-external-link"></i>
+      <a href="">How to design PCBs with Fritzing <i class="fa fa-external-link"></i></a>.
+    </div>
+  </div>
+</div>
+
+<div class="guide-step">
+  <div class="guide-images">
+    <img src="http://www.nyl.io/temp.jpg" data-caption="" />
+  </div>
+  <div class="guide-text">
+    <h2 class="guide-title">Step 2: Process SVG with InkScape</h2>
+    <ul>
+      <li>Open InkScape (<a href="">download <i class="fa fa-external-link"></i></a>)</li>
+      <li><click>Edit &gt; Select All (Ctrl+A)</click></li>
+      <li><click>Object &gt; Ungroup (Ctrl+Shift+G)</click>, repeat until you see "No groups to ungroup" in the bottom</li></ul>
+      
+      <li>[Optional] <click>View &gt; Outline</click> <tip class="fa fa-question-circle" data-content="This is so you can see the difference in the following step" /></li>
+      <li><click>Path &gt; Stroke to Path</click></li>
+      <li><click>Path &gt; Union</click></li>
+      <li><click>File &gt; Save As &gt; *.svg</click></li>
+    
+  </div>
+</div>
+
+<div class="guide-step">
+  <div class="guide-images">
+    <img src="http://www.nyl.io/temp.jpg" data-caption="" />
+  </div>
+  <div class="guide-text">
+    <h2 class="guide-title">Step 3: Open SVG with MakerCam</h2>
+    <ul>
+      <li>Go to <a href="http://makercam.com">makercam.com <i class="fa fa-external-link"></i></a></li>
+      <li>Open SVG: <click>File &gt; Open SVG</click></li>
+    </ul>
+    <br />
+    <strong>Some Navigation Tips</strong>
+    <ul>
+      <li> To Pan: <click>Toolbar &gt; Hand Icon</click></li>
+      <li> To Zoom: <click>Toolbar &gt; Plus/Minus Icon</click> or Scroll Up/Down</li>
+      <li> To Select: <click>Toolbar &gt; Arrow Icon</click>, then click or click+drag to select</li>
+    </ul>
+  </div>
+</div>
+
+<div class="guide-step">
+  <div class="guide-images">
+    <img src="http://www.nyl.io/temp.jpg" data-caption="" />
+  </div>
+  <div class="guide-text">
+    <h2 class="guide-title">Step 3: Make Copper Trace</h2>
+    <ul>
+      <li>Select copper trace outlines</li>
+      <li>Create Profile <click>CAM &gt; Profile</click></li>
+    </ul>
+    <table class="small">
+      <tr><th>Profile for Traces</th><th>&lt;12 mil</th><th>&gt;12 mil</th></tr>
+      <tr><td>tool diameter (in)</td><td>0.01</td><td>0.008</td></tr>
+      <tr><td>target depth (in)</td><td>0.008</td><td>0.006</td></tr>
+      <tr><td>inside/outside</td>&lt;td colspan=2&gt;Outside</tr>
+      <tr><td>safety height (in)</td>&lt;td colspan=2&gt;0.5
+        <tip class="fa fa-question-circle" data-content="You should tweak this number to match your set up. If you have jigs or other items that exceed 0.5 inches, for example, increase this number!" />
+      </tr>
+      <tr><td>stock surface (in)</td>&lt;td colspan=2&gt;0</tr>
+      <tr><td>step down (in)</td><td>0.004</td><td>0.003</td></tr>
+      <tr><td>feedrate (in/min)</td>&lt;td colspan=2&gt;6</tr>
+      <tr><td>plunge rate (in/min)</td>&lt;td colspan=2&gt;10</tr>
+      <tr><td>direction</td>&lt;td colspan=2&gt;counter clockwise</tr>
+    </table>
+    <div class="fa-bullet"><i class="fa fa-gear"></i> Tool: Engraving Bit (20 deg, 0.2mm)</div>
+  </div>
+</div>
+<div class="guide-step">
+  <div class="guide-images">
+    <img src="http://www.nyl.io/temp.jpg" data-caption="" />
+  </div>
+  <div class="guide-text">
+    <h2 class="guide-title">Step 4: Make Through Hole</h2>
+    <ul>
+      <li>Select through hole outlines</li>
+      <li>Create Profile: <click>CAM &gt; Drill Operation</click></li>
+    </ul>
+    <table class="small">
+      <thead>&lt;th colspan=99&gt;Through Hole Profile:</thead>
+      <tr><td>tool diameter (in)</td><td>0.035433</td></tr>
+      <tr><td>target depth (in)</td><td>0.075</td></tr>
+      <tr><td>drill location</td><td>path center</td></tr>
+      <tr><td>hole spacing (in)</td><td>0.5</td></tr>
+      <tr><td>safety height (in)</td><td>0.5</td></tr>
+      <tr><td>stock surface (in)</td><td>0</td></tr>
+      <tr><td>peck distance (in)</td><td>0.05</td></tr>
+      <tr><td>plunge rate (in/min)</td><td>5</td></tr>
+    </table>
+    <div class="fa-bullet"><i class="fa fa-gear"></i> Tool: Drill Bit (0.9mm)</div>
+  </div>
+</div>
+
+<div class="guide-step">
+  <div class="guide-images">
+    <img src="http://www.nyl.io/temp.jpg" data-caption="" />
+  </div>
+  <div class="guide-text">
+    <h2 class="guide-title">Step 5: Make Board Outline</h2>
+    <ul>
+      <li>Select through hole outlines</li>
+      <li>Create Profile: <click>CAM &gt; Profile Operation</click></li>
+    </ul>
+    <table class="small">
+      <thead>&lt;th colspan=99&gt;Board Outline Cut Profile:</thead>
+      <tr><td>tool diameter (in)</td><td>0.0625</td></tr>
+      <tr><td>target depth (in)</td><td>-0.075</td></tr>
+      <tr><td>inside/outside</td><td>Outside</td></tr>
+      <tr><td>safety height (in)</td><td>0.5</td></tr>
+      <tr><td>stock surface (in)</td><td>0</td></tr>
+      <tr><td>step down (in)</td><td>0.015</td></tr>
+      <tr><td>feed rate (in/minute)</td><td>6</td></tr>
+      <tr><td>plunge rate (in/minute)</td><td>10</td></tr>
+      <tr><td>direction</td><td>Counter Clockwise</td></tr>
+    </table>
+    <div class="fa-bullet"><i class="fa fa-gear"></i> Tool: Square Endmill (1/16 in)</div>
+  </div>
+</div>
+
+<div class="guide-step">
+  <div class="guide-images">
+    <img src="http://www.nyl.io/temp.jpg" data-caption="" />
+  </div>
+  <div class="guide-text">
+    <h2 class="guide-title">Step 6: Calculate GCode</h2>
+    <ul>
+      <li><click>Cam &gt; Calculate All</click></li>
+    </ul>
+  </div>
+</div>
+
+<div class="guide-step">
+  <div class="guide-images">
+    <img src="http://www.nyl.io/temp.jpg" data-caption="" />
+  </div>
+  <div class="guide-text">
+    <h2 class="guide-title">Step 7: Add Tabs</h2>
+    <ul>
+      <li>Select Board Outline Path</li>
+      <li>Add Tabs: <click>CAM &gt; Add Tab to Selected</click>
+    
+    <table class="small">
+      <tr>&lt;th colspan=99&gt;Tab Settings</tr>
+      <tr><td>tab spacing (in)</td><td>1</td></tr>   
+      <tr><td>tab width (in)</td><td>0.05</td></tr>
+      <tr><td>tab height (in)</td><td>0.25</td></tr>
+    </table>
+  
+
+
+<div class="guide-step">
+  <div class="guide-images">
+    <img src="http://www.nyl.io/temp.jpg" data-caption="" />
+  </div>
+  <div class="guide-text">
+    <h2 class="guide-title">Step 8: Export GCode</h2>
+    <ul>
+      <li><click>Cam &gt; Export GCode</click></li>
+      <li>Select one path at a time</li>
+      <li>Click "Export Selected Toolpath"</li>
+    </ul>
+    <br />
+    <table class="small">
+      <tr>&lt;th colspan=99&gt;Tools to use during CNC</tr>
+      <tr><td>traces</td><td>engraving bit (20 deg, 0.2mm)</td></tr>
+      <tr><td>holes</td><td>drill bit (0.9 mm)</td></tr>
+      <tr><td>board</td><td>square endmill (1/16 in)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="guide-step">
+  <div class="guide-images">
+    <img src="http://www.nyl.io/temp.jpg" data-caption="" />
+  </div>
+  <div class="guide-text">
+    <h3 class="guide-title">Check Your Code</h3>
+    <ul>
+      <li>Go to: <a href="http://nraynaud.github.io/webgcode/">G-Code Q'n'dirty Simulator <i class="fa fa-external-link"></i></a></li>
+      <li>Copy/Paste the GCode (.nc) text data into left box <tip class="fa fa-apple" data-content="For Mac users, just drag in the GCode (.nc) file." />
+      </li>
+      <li>Click Simulate Button</li>
+    </ul>
+  </div>
+</div>
+
+<div class="guide-step">
+  <div class="guide-images">
+    <img src="http://www.nyl.io/temp.jpg" data-caption="" />
+  </div>
+  <div class="guide-text">
+    <h2 class="guide-title">Step 9: Mill It!</h2>
+    <ul>
+      <li>Clamp board in</li>
+      <li>Turn Shapeoko On</li>
+      <li>Unlock <a href="http://zapmaker.org/projects/grbl-controller-3-0/">GRBL Controller <i class="fa fa-external-link"></i></a> <tip class="fa fa-info-circle" data-content="You can use other GCode senders, of course, but the GRBL is the one I'm most familiar with." /></li>
+      <li>Click <c>Choose File</c> button</li>
+      <li>Bring Engraving Bit to touch the surface of the board</li>
+      <li>Click the "Start" button</li>
+    </ul>
+    <br />
+    <div class="fa-bullet"><i class="fa fa-repeat"></i> Repeat for through holes (w/ drill bit), then the board cut (w/ endmill)</div>
+    
+  </div>
+</div>
+
+
+<div class="guide-step">
+  <div class="guide-images">
+    <img src="http://www.nyl.io/temp.jpg" data-caption="" />
+  </div>
+  <div class="guide-text">
+    <h2 class="guide-title">Step 10: Snap the Tabs</h2>
+    Snap and you're set!
+  </div>
+</div>
+
+#### Related Tutorials:
+- [Hello World, Custom PCBs with Fritzing](http://blog.nyl.io/hello-world-custom-pcb-fritzing/)
+
+Got it? Got it. Now go make things. 
+
+<!--
+<div class="guide-step">
+  <div class="guide-images">
+    <img src="http://www.nyl.io/temp.jpg" data-caption="" />
+  </div>
+  <div class="guide-text">
+    <h2 class="guide-title"></h2>
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+</div>
+-->
+</li></ul></div></div>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">nyl.io</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>nyl.io</li>
+          <li><a href="mailto:hi@nyl.io">hi@nyl.io</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/neuralfirings">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">neuralfirings</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/nliang">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">nliang</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">In order to be old and wise, you must first be young and stupid.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

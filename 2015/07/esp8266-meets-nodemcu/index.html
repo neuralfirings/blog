@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ESP8266 meets NodeMCU</title>
+  <meta name="description" content="Yesterday, I made great progress on playing around with the ESP8266, the $2 Wifi Module1. I will continue to document my progress on this blog. First, I just...">
+
+  <link rel="stylesheet" href="/blog/css/main.css">
+  <link rel="canonical" href="http://nyl.io/blog/2015/07/esp8266-meets-nodemcu/">
+  <link rel="alternate" type="application/rss+xml" title="nyl.io" href="http://nyl.io/blog/feed.xml" />
+
+
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="/blog/favicon.ico">
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/blog/">nyl.io</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/blog/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">ESP8266 meets NodeMCU</h1>
+    <p class="post-meta">Jul 5, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p>Yesterday, I made great progress on playing around with the <a href="http://www.ebay.com/itm/151657399118">ESP8266, the $2 Wifi Module</a><sup id="fnref:n"><a href="#fn:n" class="footnote">1</a></sup>. I will continue to document my progress on this blog. First, I just want a place to dump all my notes. That way, if (when) shit start burning, I can at least replicate what I know to work. Second, other people might find it useful and if I can help you avoid some of the headaches I went through, then all the better.</p>
+
+<hr />
+
+<h2 id="the-hardware">The Hardware</h2>
+<p>### ESP8266
+Ah, the <a href="http://www.ebay.com/itm/151657399118">ESP8266, the $2 Wifi Module</a><sup id="fnref:n:1"><a href="#fn:n" class="footnote">1</a></sup>. For the impatient, it’s also <a href="http://www.amazon.com/dp/B00O34AGSU">available on Amazon Prime for $8</a> with Prime Free Same Day Delivery<sup id="fnref:n:2"><a href="#fn:n" class="footnote">1</a></sup>.</p>
+
+<p>Isn’t it just the most adorable thing? <img src="/content/images/2015/07/IMG_5414.JPG" alt="" /></p>
+
+<h3 id="ftdi-cable">FTDI Cable</h3>
+<p>To connect to my laptop, I used Adafruit’s <a href="https://www.adafruit.com/products/70">USB FTDI Cable</a>. <img src="/content/images/2015/07/IMG_5415.JPG" alt="" /></p>
+
+<h3 id="jumper-wires--breadboard">Jumper Wires &amp; Breadboard</h3>
+<p>You can use <a href="http://www.amazon.com/Jumper-Wires-Premium-200mm-Female/dp/B008MRZSH8">female-to-male jumper wires</a> and <a href="http://www.amazon.com/dp/B00ARTWJ44">male-to-male jumper wires</a> to connect the pins on the ESP to the FTDI Cable. You might also need a <a href="http://www.amazon.com/gp/product/B005GYAIES/">breadboard</a> since two wires sometime go to one input.</p>
+
+<hr />
+
+<h2 id="the-software-nodemcu">The Software: NodeMCU</h2>
+<p><a href="http://nodemcu.com/index_en.html">NodeMCU</a> lets you use LUA scripting language to program the ESP8266. Apparently, there are some issues with memory going this route. I found it to be pretty straightforward.</p>
+
+<p>If you are comfortable with Arduino, there is an Arduino library. I’ll cover how to use ArduinoIDE in a different post.</p>
+
+<p>Here’s what I did to get it working<sup id="fnref:n:3"><a href="#fn:n" class="footnote">1</a></sup>:</p>
+
+<h3 id="hooked-up-esp8266-in-nodemcu-flasher-mode">1. Hooked up ESP8266 in NodeMCU Flasher Mode</h3>
+<table style="font-size: 0.8em">
+<tr>
+<td style="background: #fff"><img src="/content/images/2015/07/esp8266_dia.jpg" style="max-height:120px; margin: 0" /></td>
+&lt;td colspan=2 style="background: #fff"&gt;<img src="/content/images/2015/07/ftdi_dia-1.jpg" style="max-height: 120px; margin: 0" />
+</tr>
+<tr><th>ESP8266</th><th>FTDI</th><th>Why?</th></tr>
+<tr><td>VCC</td><td>VCC</td><td>POWER!</td></tr>
+<tr><td>GND</td><td>GND</td><td>POWER!</td></tr>
+<tr><td>TX</td><td>RX</td><td>Send info from esp to computer</td></tr>
+<tr><td>RX</td><td>TX</td><td>Send info from computer to esp</td></tr>
+<tr><td>GPIO0</td><td>GND</td><td>Ground to start update</td></tr>
+<tr><td>GPIO2</td><td>None</td><td></td></tr>
+<tr><td>Reset</td><td>None</td><td></td></tr>
+<tr><td>CH_PD</td><td>VCC</td><td>Enables the chip</td></tr>
+</table>
+
+<h3 id="flash-nodemcu-firmware">2. Flash NodeMCU Firmware</h3>
+<p>Mac/Linux Command Line can use Esptool (see below). Windows machines can use <a href="https://github.com/nodemcu/nodemcu-flasher">NodeMCU-Flasher</a>.</p>
+
+<h4 id="get-port-name">Get Port Name</h4>
+<p>I ran this command to get the port name for my USB. The USB has to be plugged in and hooked up for this to show.</p>
+
+<p><code>
+ls /dev/tty.*
+</code></p>
+
+<p>On a Mac, you should get something like <code>/dev/tty.usbserial-ABC</code>.</p>
+
+<p>For Windows, you can use your Device Manager and look under “Ports (COM and LPT)”. The Port Name should be <code>COM3</code> or something like that. You might have to install FTDI Driver first.</p>
+
+<h4 id="esptool">esptool</h4>
+
+<p><a href="https://github.com/themadinventor/esptool">Esptool</a> is a Python script that lets you flash the ESP8266 module.</p>
+
+<p>Download latest <a href="https://github.com/nodemcu/nodemcu-firmware/tree/master/pre_build/latest">NodeMCU Firmware</a> (a file name “nodemcu_latest.bin”) into some folder. Then, install Esptool, I used git clone to do this. You can also just download the python file, <a href="https://github.com/themadinventor/esptool/raw/master/esptool.py">esptool.py</a>.</p>
+
+<p><code>
+git clone https://github.com/themadinventor/esptool.git
+cd esptool
+python esptool.py --port &lt;YOUR_PORT_NAME&gt; write_flash 0x00000 &lt;PATH_TO_FIRMWARE&gt;
+</code></p>
+
+<p>For example, say your port name is <code>/dev/tty.usbserial-ABC</code> and you downloaded the <code>nodemcu_latest.bin</code> to <code>/Users/me/nodemcu/nodemcu_latest.bin</code>, you’d write:</p>
+
+<p><code>
+python esptool.py --port /dev/tty.usbserial-ABC write_flash 0x00000 /Users/me/nodemcu/nodemcu_latest.bin
+</code></p>
+
+<h3 id="hooked-up-esp8266-in-nodemcu-coding-mode">3. Hooked up ESP8266 in NodeMCU Coding Mode</h3>
+<p>The coding mode is similar to Flash Mode, but without GPIO0 connected to ground.</p>
+<table style="font-size: 0.8em">
+<tr>
+<td style="background: #fff"><img src="/content/images/2015/07/esp8266_dia.jpg" style="max-height:120px; margin: 0" /></td>
+&lt;td colspan=2 style="background: #fff"&gt;<img src="/content/images/2015/07/ftdi_dia-1.jpg" style="max-height: 120px; margin: 0" />
+</tr>
+<tr><th>ESP8266</th><th>FTDI</th><th>Why?</th></tr>
+<tr><td>VCC</td><td>VCC</td><td>POWER!</td></tr>
+<tr><td>GND</td><td>GND</td><td>POWER!</td></tr>
+<tr><td>TX</td><td>RX</td><td>Send info from esp to computer</td></tr>
+<tr><td>RX</td><td>TX</td><td>Send info from computer to esp</td></tr>
+<tr><td>GPIO0</td><td>None</td><td></td></tr>
+<tr><td>GPIO2</td><td>None</td><td></td></tr>
+<tr><td>Reset</td><td>None</td><td></td></tr>
+<tr><td>CH_PD</td><td>VCC</td><td>Enables the chip</td></tr>
+</table>
+
+<h3 id="connect-via-serial-terminal">4. Connect via Serial Terminal</h3>
+
+<p>For Mac/Linux, use the screen command line tool. Mac Users can also use <a href="http://freeware.the-meiers.org/">CoolTerm</a>. Windows users can use <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY</a>. Other options are covered in <a href="https://learn.sparkfun.com/tutorials/terminal-basics/all">Sparkfun’s Terminal Basics Guide</a>. This guide starts with detailed explanation and what this “terminal” thing is and a little history as well. A good read for the curious.</p>
+
+<p>For NodeMCU, use <code>baud rate=9600</code>. I’m not sure if you have to, but all the tutorials I’ve read online says to use 9600. So sure, why not. 9600.</p>
+
+<h4 id="screen-command">Screen Command</h4>
+
+<p><a href="https://kb.iu.edu/d/acuy">Screen</a> allows you to use multiple windows (virtual VT100 terminals) in Mac and Linux machines. You can call it using the command line:</p>
+
+<p><code>
+screen &lt;PORT_NAME&gt; &lt;BAUD_RATE&gt;
+</code>
+Say, you get <code>/dev/tty.usbserial-ABC</code> as your USB port name and want to connect using <code>9600</code> baud rate. You would type in:
+<code>
+screen /dev/tty.usbserial-ABC 9600
+</code>
+To exit screen, <code>CTRL+A</code> theb <code>CTRL+\</code>one after the other.</p>
+
+<h4 id="coolterm">CoolTerm</h4>
+<p>You can also use <a href="http://freeware.the-meiers.org/">CoolTerm</a> if you want a GUI tool. Open up CoolTerm, then click Options. Set the Baud Rate to 9600 and select the Port. You might have to click “Re-scan Serial Ports.”</p>
+
+<p>Then under “Terminal” (option on the left side), check “Handle BS and DEL Character.” This will enable you to use the backspace or delete key<sup id="fnref:n:4"><a href="#fn:n" class="footnote">1</a></sup>.</p>
+
+<p>Then click “OK” and click “Connect.”</p>
+
+<h3 id="start-coding">5. Start Coding!</h3>
+
+<p>You can try a simple hello world to see if it works.</p>
+
+<p><code>
+print("hello world")
+</code></p>
+
+<p>This should return… well, hello world.</p>
+
+<p>Try fiddling around with some of the <a href="http://nodemcu.com/index_en.html#fr_5475f7667976d8501100000f">NodeMCU Examples</a>. A complete list of functions you can call is <a href="https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en">documented here</a>.</p>
+
+<h4 id="initlua">init.lua</h4>
+<p><code>init.lua</code> is the file your ESP8266 will run at boot. Just.. don’t put an infinite loop into this file like I did the first time. If you do, you’ll have to reflash your module.</p>
+
+<p>Now, using a Serial Terminal you can type (or copy/paste) one line at a time. This might make your head explode. In comes luatool to save the day.</p>
+
+<h4 id="luatool">luatool</h4>
+<p><a href="https://github.com/4refr0nt/luatool">Luatool</a> is a Python script that enables you to edit Lua using whatever text editor you wish, and then send the file to the ESP8266 module.</p>
+
+<p>I used Git Clone to install. But you can download the <a href="https://github.com/4refr0nt/luatool/raw/master/luatool/luatool.py">luatool.py file</a> instead.</p>
+
+<p><code>
+git clone https://github.com/4refr0nt/luatool.git
+cd luatool/luatool
+</code>
+Then you can upload a lua file in the currently directory using: 
+<code>bash
+python luatool.py --port &lt;YOUR_PORT_NAME&gt; --src &lt;YOUR_FILE.lua&gt;
+</code>
+For example, if you get <code>/dev/tty.usbserial-ABC</code> as your USB port name and want to upload <code>foo.lua</code>. You would type in:
+<code>
+python luatool.py --port /dev/tty.usbserial-ABC --src foo.lua
+</code></p>
+
+<p>NOTE: you need to disconnect from all other connections to the ESP8266. So if you’re using CoolTerm, click “Disconnect” at the top. If you’re using <code>screen</code>, do <code>Ctrl+a</code> then <code>Ctrl+\</code> to disconnect.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>I’ve found this to be pretty nifty. Looking through the NodeMCU example, you can set up a simple web server, though the memory limits of Lua leaves much to be desired.</p>
+
+<p>Also, we tried on our local network and logging in takes a while. I’m not quite sure how networks work, but I’m sure that I experienced slowness. And I’m sure that I don’t like slowness.</p>
+
+<h3 id="better-way-to-parse-http-responses">1. Better way to parse HTTP Responses</h3>
+
+<p>The ESP8266 can also act as a client. It can read webpages and execute certain commands. I will need to write something to parse all the header junk out and return a JSON or something simple. Right now when I send a request, I get this monster:</p>
+
+<p>```
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 05 Jul 2015 01:56:57 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Status: 200 OK
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-UA-Compatible: chrome=1
+ETag: “9bb58f26192e4ba00f01e2e7b136bbd8”
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 8f9baf99-1418-4558-90ff-de1e2b55988a
+X-Runtime: 0.016318
+Vary: Origin</p>
+
+<p>d
+{“foo”:”bar”}
+0
+```</p>
+
+<p>All I really want is <code>{"foo": "bar"}</code> here.</p>
+
+<h3 id="better-way-to-load-up-large-lua-scripts">2. Better way to load up “large” lua scripts</h3>
+
+<p>I also need a way to write larger Lua scripts. <code>luatool</code> is ~~a bit~~ a lot shaky with larger files (&gt;40 lines). Maybe I’ll write a function that appends to a file rather than write a new file.</p>
+
+<p>Then again, maybe this is why people use ArduinoIDE to program the ESP8266 rather than NodeMCU. More on that later.</p>
+
+<p>🍻 Oh well, time to drink beer. Happy 4th of July, everyone! 🇺🇸</p>
+
+<!-- FOOTNOTES -->
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:n">
+      <p>And boy, do I make a lot of typos! You don’t realize how bad your typing accuracy is until they take away the backspace option. <a href="#fnref:n" class="reversefootnote">&#8617;</a> <a href="#fnref:n:1" class="reversefootnote">&#8617;<sup>2</sup></a> <a href="#fnref:n:2" class="reversefootnote">&#8617;<sup>3</sup></a> <a href="#fnref:n:3" class="reversefootnote">&#8617;<sup>4</sup></a> <a href="#fnref:n:4" class="reversefootnote">&#8617;<sup>5</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">nyl.io</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>nyl.io</li>
+          <li><a href="mailto:hi@nyl.io">hi@nyl.io</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/neuralfirings">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">neuralfirings</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/nliang">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">nliang</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">In order to be old and wise, you must first be young and stupid.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
