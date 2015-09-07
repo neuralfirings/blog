@@ -1,0 +1,12 @@
+_site
+.sass-cache
+.jekyll-metadata
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Other
+.DS_Store
+/**/.DS_Store
+/gitignore
