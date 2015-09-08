@@ -1,5 +1,6 @@
 .sass-cache
 .jekyll-metadata
+_site/
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
@@ -8,7 +9,5 @@
 # Other
 .DS_Store
 /**/.DS_Store
-/gitignore
 
-# Site
-_site/
+
