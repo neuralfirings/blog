@@ -11,7 +11,7 @@
 
   <title>
     
-      Fixing My Laptop &middot; nyl.io
+      Layout &middot; nyl.io
     
   </title>
 
@@ -163,71 +163,87 @@
       </div>
 
       <div class="container content">
-        <div class="post">
-  <h1 class="post-title">Fixing My Laptop</h1>
-  <span class="post-date">30 Sep 2014</span>
-  <h2 id="how-expensive-things-can-cost-less">How expensive things can cost less.</h2>
+        <div class="page">
+  <h1 class="page-title">Layout</h1>
+  <p>You’re live! Nice.</p>
 
-<p>I bought my laptop in 2010. Before this computer, I’ve never owned a laptop that lasted more than 2 years. I’ve also never owned a laptop that was more than $1000. I decided to treat myself and buy a more expensive laptop, in the hopes of having it last longer. If it makes it through Year 3, then I break even. If it makes it through Year 4, then I would have saved money.</p>
+<h1 id="heading-1">Heading 1</h1>
+<p>We’ve put together a little post to introduce you to the Ghost editor and get you started.</p>
 
-<p>Year 3 passed fine. Break even point cleared!</p>
+<h2 id="heading-2">Heading 2</h2>
+<p>You can manage your content by signing in to the admin area at <code>&lt;your blog URL&gt;/ghost/</code>. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!</p>
 
-<p>But in Year 4, the issues started. I needed more RAM. My fan was making weird noises. The computer was sloooooooow.</p>
+<h3 id="heading-3-getting-started">Heading 3: Getting Started</h3>
 
-<p>Rather than buying a new machine, a friend helped me upgrade my RAM and replace my failing hard drive with a new Solid State Drive. Last weekend, I replaced my clickity fan with a $15 fan I found on Amazon and free instructions from iFixit.</p>
+<p>Ghost uses something called Markdown for writing. Essentially, it’s a shorthand way to manage your post formatting as you write!</p>
 
-<p>My computer runs faster than ever at decibels that would please abbey monks.</p>
+<h4 id="heading-4">Heading 4</h4>
+<p>Writing in Markdown is really easy. In the left hand panel of Ghost, you simply write as you normally would. Where appropriate, you can use <em>shortcuts</em> to <strong>style</strong> your content. For example, a list:</p>
 
-<h2 id="our-disposable-culture">Our Disposable Culture</h2>
+<ul>
+  <li>Item number one</li>
+  <li>Item number two
+    <ul>
+      <li>A nested item</li>
+    </ul>
+  </li>
+  <li>A final item</li>
+</ul>
 
-<p><img src="/content/images/2015/05/laptop_1-1.jpeg" alt="Sock designed by Yazmin Alanis from the Noun Project" /></p>
+<p>or with numbers!</p>
 
-<p>We live in a disposable world of IKEA, paper coffee cups, and plastic utensils. I used to know somebody who would buy hundreds of socks every year, because he only like the feel of new socks. Of course, Sockman is an extreme version of this disposable culture, but he is a good illustration of the disposable mindset.</p>
+<ol>
+  <li>Remember to buy some milk</li>
+  <li>Drink the milk</li>
+  <li>Tweet that I remembered to buy the milk, and drank it</li>
+</ol>
 
-<p>A New Mindset</p>
+<h3 id="links">Links</h3>
 
-<p><img src="/content/images/2015/05/laptop_2.jpeg" alt="Coffee designed by Jacob Halton from the Noun Project" /></p>
+<p>Want to link to a source? No problem. If you paste in a URL, like http://ghost.org - it’ll automatically be linked up. But if you want to customise your anchor text, you can do that too! Here’s a link to <a href="http://ghost.org">the Ghost website</a>. Neat.</p>
 
-<p>I used to think a lot about the upfront cost of things, and now more and more I am thinking about upfront cost spread over periods of time. I also think more about caring for items I have. If something breaks or tears, how can I mend it first before throwing it away and buying something new.</p>
+<h3 id="what-about-images">What about Images?</h3>
 
-<p>This mindsets helps me de-clutter. Also, my budget for the individual items can increase as their expected lifespan increase.</p>
+<p>Images work too! Already know the URL of the image you want to include in your article? Simply paste it in like this to make it show up:</p>
 
-<p>Expensive things can indeed cost less in the end.</p>
+<p><img src="https://ghost.org/images/ghost.png" alt="The Ghost Logo" /></p>
 
-</div>
+<p>Not sure which image you want to use yet? That’s ok too. Leave yourself a descriptive placeholder and keep writing. Come back later and drag and drop the image in to upload:</p>
 
-<div class="related">
-  <h2>Related Posts</h2>
-  <ul class="xrelated-posts">
-    
-      <li>
-        <h5>
-          <a href="/blog/2015/09/hello-world-intro">
-            Hello World Projects
-            <small>07 Sep 2015</small>
-          </a>
-        </h5>
-      </li>
-    
-      <li>
-        <h5>
-          <a href="/blog/2015/09/welcome-to-jekyll">
-            Welcome to Jekyll!
-            <small>07 Sep 2015</small>
-          </a>
-        </h5>
-      </li>
-    
-      <li>
-        <h5>
-          <a href="/blog/2015/09/hello-world-custom-pcb-fritzing">
-            Hello World: Design PCBs with Fritzing
-            <small>05 Sep 2015</small>
-          </a>
-        </h5>
-      </li>
-    
-  </ul>
+<p>![A bowl of bananas]</p>
+
+<h3 id="quoting">Quoting</h3>
+
+<p>Sometimes a link isn’t enough, you want to quote someone on what they’ve said. It was probably very wisdomous. Is wisdomous a word? Find out in a future release when we introduce spellcheck! For now - it’s definitely a word.</p>
+
+<blockquote>
+  <p>Wisdomous - it’s definitely a word.</p>
+</blockquote>
+
+<h3 id="working-with-code">Working with Code</h3>
+
+<p>Got a streak of geek? We’ve got you covered there, too. You can write inline <code>&lt;code&gt;</code> blocks really easily with back ticks. Want to show off something more comprehensive? 4 spaces of indentation gets you there.</p>
+
+<pre><code>.awesome-thing {
+    display: block;
+    width: 100%;
+}
+</code></pre>
+
+<h3 id="ready-for-a-break">Ready for a Break?</h3>
+
+<p>Throw 3 or more dashes down on any new line and you’ve got yourself a fancy new divider. Aw yeah.</p>
+
+<hr />
+
+<h3 id="advanced-usage">Advanced Usage</h3>
+
+<p>There’s one fantastic secret about Markdown. If you want, you can write plain old HTML and it’ll still work! Very flexible.</p>
+
+<p><input type="text" placeholder="I'm an input field!" /></p>
+
+<p>That should be enough to get you started. Have fun - and let us know what you think :)</p>
+
 </div>
 
       </div>
