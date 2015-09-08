@@ -8,7 +8,7 @@ permalink: /:year/:month/:title
 
 # Setup
 title:               nyl.io
-tagline:             'Random neural firings by Nancy Yi Liang.'
+tagline:             'random neural firings by Nancy Yi Liang.'
 description:         ''
 url:                 http://www.nyl.io/blog
 baseurl:             '/blog'
