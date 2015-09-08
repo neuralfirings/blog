@@ -1,17 +1,24 @@
-# Site settings
-title: nyl.io
-email: hi@nyl.io
-description: "In order to be old and wise, you must first be young and stupid."
-baseurl: "/blog" # the subpath of your site, e.g. /blog/
-url: "http://nyl.io" # the base hostname & protocol for your site
-twitter_username: nliang
-github_username:  neuralfirings
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+# permalink:           pretty
+relative_permalinks: true
 timezone: America/Los_Angeles
 permalink: /:year/:month/:title
 
-# Build settings
-markdown: kramdown
+# Setup
+title:               nyl.io
+tagline:             'In order to be old and wise, you must first be young and stupid.'
+description:         ''
+url:                 http://www.nyl.io/blog
+baseurl:             '/blog'
+paginate:            5
 
-# Dependencies (cp from other blog)
-pygments:         true
-permalink: /:year/:month/:title/
+# About/contact
+author:
+  name:              Nancy Yi Liang
+  url:               https://twitter.com/nliang
+  email:             hi@nyl.io
+
+# Custom vars
+version:             1.0.0
