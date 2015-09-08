@@ -8,7 +8,7 @@ permalink: /:year/:month/:title
 
 # Setup
 title:               nyl.io
-tagline:             'In order to be old and wise, you must first be young and stupid.'
+tagline:             'Random neural firings by Nancy Yi Liang.'
 description:         ''
 url:                 http://www.nyl.io/blog
 baseurl:             '/blog'

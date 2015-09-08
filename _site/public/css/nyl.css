@@ -1,0 +1,49 @@
+body {
+  font-family: 'Lora', serif;
+  color: #585858; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  text-rendering: optimizeLegibility;
+  color: #222;
+  letter-spacing: 0rem; }
+
+h1, h2, h4, h6 {
+  font-weight: 900; }
+
+h3, h5 {
+  font-weight: 300; }
+
+ul, ol, dl {
+  margin-bottom: 0em; }
+
+ul {
+  margin-left: -1em; }
+
+ol {
+  margin-left: -0.75em; }
+
+.theme-base-08 a:hover {
+  color: #800;
+  text-decoration: none; }
+
+hr.thick {
+  border-top: dashed 2px #ac4142;
+  margin: 5em 0em; }
+
+.container {
+  max-width: 32rem; }
+
+@media (min-width: 38em) {
+  .container {
+    max-width: 36rem; } }
+@media (min-width: 56em) {
+  .container {
+    max-width: 42rem; } }
+.page, .post {
+  margin-bottom: 1.5em; }
+
+.masthead {
+  background-color: #800; }
+  .masthead .masthead-title a {
+    color: #FFF; }
